@@ -4,7 +4,7 @@ public class Team {
 	private String name;
 	private int wins, losses, games, MoV, PF, PA;
 	private double YF, YA;
-	private double SoS, SoV, pct;
+	private double SoS, SoV, PCT;
 	private ArrayList<String> opponents;
 	private ArrayList<String> results;
 	
@@ -19,22 +19,62 @@ public class Team {
 	
 	public double calculateRank() {
 		double rank = 0.0;
-		
-		//PCT 		= 20%
-		//SoS 		= 20%
-		//SoV 		= 10%
-		//YF/Game/350	= 12.5%
-		//YA/Game/250	= 12.5%
-		//PF/Game/24	= 12.5%
-		//PA/Game/24	= 12.5%
-		
-		rank =	((pct*100)*.20
-				+ (SoS*100)*.20
-				+ (SoV*100)*.10
-				+ (MoV/games)*.10
-				)/60;
-		
-		return rank;
+
+		double pctEffect, sosvEffect, movEffect, yfEffect, yaEffect;
+
+		//Effect of Win percent (tiered),SoS, and SoV
+		if (PCT == 1.0) {
+			pctEffect = 100;
+		} else if (PCT >= .75 && PCT < 1.0) {
+			pctEffect = 75;
+		} else if (PCT >= .5 && PCT < .75) {
+			pctEffect = 50;
+		} else if (PCT >= .25 && PCT < .5) {
+			pctEffect = 25;
+		} else {
+			pctEffect = 0;
+		}
+		sosvEffect = SoV*SoS*100;
+
+
+		//Effect of MoV, reward of up to 21
+		movEffect = (Math.min(21.0, MoV)/21);
+
+		//Effect of YF and YA (tiered)
+		if (YF >= 450) {
+			yfEffect = 100;
+		} else if (YF >= 400 && YF < 450) {
+			yfEffect = 80;
+		} else if (YF >= 350 && YF < 400) {
+			yfEffect = 60;
+		} else if (YF >= 300 && YF < 350) {
+			yfEffect = 40;
+		} else if (YF >= 250 && YF < 300) {
+			yfEffect = 20;
+		} else {
+			yfEffect = 0;
+		}
+		if (YA <= 150) {
+			yaEffect = 100;
+		} else if (YA <= 200 && YA > 150) {
+			yaEffect = 75;
+		} else if (YA <= 250 && YA > 200) {
+			yaEffect = 50;
+		} else if (YA <= 300 && YA > 250) {
+			yaEffect = 25;
+		} else if (YA <= 350 && YA > 300) {
+			yaEffect = 0;
+		} else {
+			yaEffect = -50;
+		}
+
+		rank = 	pctEffect*.3
+				+ sosvEffect*.25
+				+ movEffect*.2
+				+ yfEffect*.1
+				+ yaEffect*.1;
+
+		return rank/100;
 	}
 	
 	public String getName() {
@@ -50,7 +90,7 @@ public class Team {
 			this.results.add("L");
 		}
 		this.games++;
-		this.pct = (double)wins/(games);
+		this.PCT = (double)wins/(games);
 	}
 	public int getWins() {
 		return wins;
@@ -90,8 +130,8 @@ public class Team {
 	public double getAvgMoV() {
 		return (double)(MoV)/(games);
 	}
-	public double getPct() {
-		return pct;
+	public double getPCT() {
+		return PCT;
 	}
 	public void setYF(double YF) {
 		this.YF = YF;

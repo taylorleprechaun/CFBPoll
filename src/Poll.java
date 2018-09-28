@@ -172,8 +172,8 @@ public class Poll {
 	}
 	
 	public static void getTeamStats(Map<String, Team> teams) {
-		File offense = new File("C:\\Users\\c46659\\workspace\\CFBPoll\\TeamO.xlsx");
-		File defense = new File("C:\\Users\\c46659\\workspace\\CFBPoll\\TeamD.xlsx");
+		File offense = new File("C:\\Users\\Taylor\\Documents\\Github\\CFBPoll\\TeamO.xlsx");
+		File defense = new File("C:\\Users\\Taylor\\Documents\\Github\\CFBPoll\\TeamD.xlsx");
 		ArrayList<ArrayList<String>> offenseSheet = getSpreadsheet(offense);
 		ArrayList<ArrayList<String>> defenseSheet = getSpreadsheet(defense);
 		
@@ -212,7 +212,7 @@ public class Poll {
 				}
 				cell = sheet.get(ii).get(jj);
 				if (cell.contains("Jose")) {
-					String repl = cell.replace("Jose", "José");
+					String repl = cell.replace("Jose", "Josï¿½");
 					sheet.get(ii).set(jj, repl);
 				}
 				cell = sheet.get(ii).get(jj);
@@ -256,6 +256,45 @@ public class Poll {
 					sheet.get(ii).set(jj, repl);
 				}
 				cell = sheet.get(ii).get(jj);
+				if (cell.contains("Florida International")) {
+					String repl = cell.replace("Florida International", "Florida Int'l");
+					sheet.get(ii).set(jj, repl);
+				}
+				cell = sheet.get(ii).get(jj);
+				if (cell.contains("Pitt")) {
+					String repl = cell.replace("Pitt", "Pittsburgh");
+					sheet.get(ii).set(jj, repl);
+				}
+				cell = sheet.get(ii).get(jj);
+				if (cell.contains("Ohio") && !cell.equals("Ohio State")) {
+					String repl = cell.replace("Ohio", "Ohio U.");
+					sheet.get(ii).set(jj, repl);
+				}
+				cell = sheet.get(ii).get(jj);
+				if (cell.equals("Louisiana")) {
+					String repl = cell.replace("Louisiana", "Louisiana-Lafayette");
+					sheet.get(ii).set(jj, repl);
+				}
+				cell = sheet.get(ii).get(jj);
+				if (cell.contains("UTSA")) {
+					String repl = cell.replace("UTSA", "Texas-San Antonio");
+					sheet.get(ii).set(jj, repl);
+				}
+				cell = sheet.get(ii).get(jj);
+				if (cell.contains("Bowling Green St")) {
+					String repl = cell.replace("Bowling Green St", "Bowling Green");
+					sheet.get(ii).set(jj, repl);
+				}
+				cell = sheet.get(ii).get(jj);
+				if (cell.contains("Texas St")) {
+					String repl = cell.replace("Texas St", "Texas St-San Marcos");
+					sheet.get(ii).set(jj, repl);
+				}
+				cell = sheet.get(ii).get(jj);
+				if (cell.contains("Monroe")) {
+					String repl = "Louisiana-Monroe";
+					sheet.get(ii).set(jj, repl);
+				}
 			}
 		}
 	}
@@ -328,19 +367,29 @@ public class Poll {
 		
 		
 		//Print name and record
-		System.out.println("Number\tTeam\t\t\tPoints\tWins\tLosses\tPct\tSoS\tSoV\tAvgMoV\tYF\tYA");
+		System.out.println("Number\tTeam\t\t\t\tPoints\tWins\tLosses\tPct\t\tSoS\t\tSoV\t\tAvgMoV\tYF\t\tYA");
 		System.out.println("=====================================================================================================");
 		for (int ii = 0; ii < names.size(); ii++) {
 			Team currTeam = teams.get(names.get(ii));
 			
-			//Number + Name
-			System.out.print((ii+1) + ":\t" + currTeam.getName());
+			//Number
+			System.out.print((ii+1) + ":\t");
+			if ((ii+1) < 100) {
+				System.out.print("\t");
+			}
+
+			//Name
+			System.out.print(currTeam.getName());
 			//Tabbing for name length
-			if (currTeam.getName().length() < 8) {
+			if (currTeam.getName().length() < 4) {
+				System.out.print("\t\t\t\t\t");
+			} else if (currTeam.getName().length() < 8) {
+				System.out.print("\t\t\t\t");
+			} else if (currTeam.getName().length() < 12) {
 				System.out.print("\t\t\t");
 			} else if (currTeam.getName().length() < 16) {
 				System.out.print("\t\t");
-			} else if (currTeam.getName().length() < 24) {
+			} else if (currTeam.getName().length() < 20) {
 				System.out.print("\t");
 			}
 
@@ -349,15 +398,15 @@ public class Poll {
 			System.out.print(dec0.format(currTeam.calculateRank()) + "\t");
 			
 			//Wins and Losses
-			System.out.print(currTeam.getWins() + "\t" + currTeam.getLosses());
+			System.out.print(currTeam.getWins() + "\t\t" + currTeam.getLosses());
 			
 			DecimalFormat dec1 = new DecimalFormat("#0.0000");
 			//Win Pct
-			System.out.print("\t" + dec1.format(((double)currTeam.getWins())/(currTeam.getGames())));
+			System.out.print("\t\t" + dec1.format(((double)currTeam.getWins())/(currTeam.getGames())));
 			//SoS and SoV
 			System.out.print("\t" + dec1.format(currTeam.getSoS()) + "\t" + dec1.format(currTeam.getSoV()));
 
-			DecimalFormat dec2 = new DecimalFormat("#0.0");
+			DecimalFormat dec2 = new DecimalFormat("#0.00");
 			//MoV
 			System.out.print("\t" + dec2.format(currTeam.getAvgMoV()));
 			//YF
