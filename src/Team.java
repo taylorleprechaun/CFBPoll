@@ -16,13 +16,15 @@ public class Team {
 		this.opponents = new ArrayList<String>();
 		this.results = new ArrayList<String>();
 	}
-	
+
+	//Calculates the teams rank in the system
 	public double calculateRank() {
 		double rank = 0.0;
 
+		//Components of final rank
 		double pctEffect, sosvEffect, movEffect, yfEffect, yaEffect;
 
-		//Effect of Win percent (tiered),SoS, and SoV
+		//Effect of Win percent (tiered)
 		if (PCT == 1.0) {
 			pctEffect = 100;
 		} else if (PCT >= .75 && PCT < 1.0) {
@@ -34,13 +36,14 @@ public class Team {
 		} else {
 			pctEffect = 0;
 		}
-		sosvEffect = SoV*SoS*100;
 
+		//Effect of SoS and SoV
+		sosvEffect = SoV*SoS*100;
 
 		//Effect of MoV, reward of up to 21
 		movEffect = (Math.min(21.0, MoV)/21);
 
-		//Effect of YF and YA (tiered)
+		//Effect of YF (tiered)
 		if (YF >= 450) {
 			yfEffect = 100;
 		} else if (YF >= 400 && YF < 450) {
@@ -54,29 +57,35 @@ public class Team {
 		} else {
 			yfEffect = 0;
 		}
-		if (YA <= 150) {
+
+		//Effect of YA (tiered) with penalties for giving up too many yards/game
+		if (YA <= 250) {
 			yaEffect = 100;
-		} else if (YA <= 200 && YA > 150) {
-			yaEffect = 75;
-		} else if (YA <= 250 && YA > 200) {
-			yaEffect = 50;
 		} else if (YA <= 300 && YA > 250) {
-			yaEffect = 25;
+			yaEffect = 75;
 		} else if (YA <= 350 && YA > 300) {
+			yaEffect = 50;
+		} else if (YA <= 400 && YA > 350) {
+			yaEffect = 25;
+		} else if (YA <= 450 && YA > 400) {
 			yaEffect = 0;
+		} else if (YA <= 500 && YA > 450) {
+			yaEffect = -25;
 		} else {
 			yaEffect = -50;
 		}
 
+		//Krabby Patty secret formula
 		rank = 	pctEffect*.3
 				+ sosvEffect*.25
 				+ movEffect*.2
 				+ yfEffect*.1
 				+ yaEffect*.1;
 
-		return rank/100;
+		return rank/95;
 	}
-	
+
+	//Getters and Setters
 	public String getName() {
 		return name;
 	}

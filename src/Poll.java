@@ -13,34 +13,51 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
 
 /*	Philosophy
- * 
- *  Gives credit for W/L against FCS but does not count towards SoV or So
- * 
- * 
- * 
- *	Sources
- *	Scores - http://prwolfe.bol.ucla.edu/cfootball/scores.htm
- *	Stats - sports-reference
+
+	Gives credit for W/L against FCS but does not count towards SoV or So
+	Formula uses win percent, SoS, SoV, MoV (capped at 21), YF, and YA
+
+	Final points are from the formula and then divided by the team with the most
+		so that #1 has 1.000 and the rest is relative to them
+
+	Sources:
+	Scores - http://prwolfe.bol.ucla.edu/cfootball/scores.htm
+	Stats - https://www.sports-reference.com/cfb/years/2018-team-defense.html
+		https://www.sports-reference.com/cfb/years/2018-team-offense.html
  */
 
-//TODO: Fix team names in stat sheets
+//TODO: save game by game MoV to team and use to weight wins by opponent
+//TODO: 	rather than by schedule
+//TODO: use more stats (TO margin, Yards/Play, Pts/Drive
 
 public class Poll {
+	public static String date = "20180930";
+
 	public static void main(String[] args) throws InterruptedException {
+		//Hold teams and their names for lookup
 		Map<String, Team> teams = new HashMap<String, Team>();
+
+		//Gets FBS teams from FBS.txt
 		generateTeams(teams);
-		getTeamResults(teams);		
+		//Pulls scores (and calculates record) of teams from UCLA page
+		getTeamResults(teams);
+		//Calculates SoS and SoV for each team using scores and records
 		setTeamSoSSoV(teams);
+		//Pulls stats from sports-reference
 		getTeamStats(teams);
+		//Prints results, calculates score and points for each team using rank formula
 		printTeamData(teams);
 		
 	}
 
+	//Gets team names from FBS.txt and stores in a map
 	public static void generateTeams(Map<String, Team> teams) {
 		try {
-			BufferedReader teamReader = new BufferedReader(new FileReader("FBS.txt"));
+			//Read from file
+			BufferedReader teamReader = new BufferedReader(new FileReader(".\\rsc\\FBS.txt"));
 			String str;
 			while ((str = teamReader.readLine()) != null) {
+				//Create team using the team name and add to map
 				Team newTeam = new Team(str);
 				teams.put(str, newTeam);
 			}
@@ -49,21 +66,22 @@ public class Poll {
 		} catch (IOException e) {
 		}
 	}
-	
+
+	//Gets team score and updates record + opponents
 	public static void getTeamResults(Map<String, Team> teams) throws InterruptedException {
 		try {
-			BufferedReader dataReader = new BufferedReader(new FileReader("2018 College Football - 20180926.htm"));
+			//Read from UCLA page html file
+			BufferedReader dataReader = new BufferedReader(new FileReader(".\\rsc\\scores\\2018 College Football - " + date + ".html"));
 			String str;
 			
 			while ((str = dataReader.readLine()) != null) {
-				//Starts with a date
-				if (Character.isDigit(str.charAt(0))) {
-					
-					//Get teams
+				//If not an empty line and starts with a date
+				if (!str.isEmpty() && Character.isDigit(str.charAt(0))) {
 					String away = "", home = "", tempScore = "";
 					//Away team
 					for (int ii = 10; !Character.isSpaceChar(str.charAt(ii)); ii++) {
 						away += str.charAt(ii);
+						//Make sure to get full name until it reaches multiple spaces in a row
 						if (Character.isSpaceChar(str.charAt(ii+1)) && !Character.isSpaceChar(str.charAt(ii+2))) {
 							away += " ";
 							ii++;
@@ -72,6 +90,7 @@ public class Poll {
 					//Home team
 					for (int ii = 41; !Character.isSpaceChar(str.charAt(ii)); ii++) {
 						home += str.charAt(ii);
+						//Make sure to get full name until it reaches multiple spaces in a row
 						if (Character.isSpaceChar(str.charAt(ii+1)) && !Character.isSpaceChar(str.charAt(ii+2))) {
 							home += " ";
 							ii++;
@@ -80,10 +99,10 @@ public class Poll {
 					
 					//Make sure it contains eligible teams
 					if (!teams.containsKey(home) && !teams.containsKey(away)) {
+						//If neither team is FBS then skip and do next line
 						continue;
 					}
 					
-					//Get scores
 					int scoreAway, scoreHome;
 					//Away score
 					for (int ii = 38; ii < 40; ii++) {
@@ -106,27 +125,20 @@ public class Poll {
 					//1 = home win, 0 = road win
 					int homeResult = (scoreHome>scoreAway)? 1:0;
 					int awayResult = (scoreHome<scoreAway)? 1:0;
-					
-//					System.out.println(away + " - " + scoreAway + " @ " + home + " - " + scoreHome);
-					
+
 					//Update team records + MoV
 					if (teams.containsKey(home)) {
 						teams.get(home).setRecord(homeResult);
 						teams.get(home).updateOpponents(away);
 						teams.get(home).setMoV(scoreHome, scoreAway);
-//						System.out.println("\t\t" + home + " (" + teams.get(home).getWins() + ", " + teams.get(home).getLosses() + ")");
 					}
 					if (teams.containsKey(away)) {
 						teams.get(away).setRecord(awayResult);
 						teams.get(away).updateOpponents(home);
 						teams.get(away).setMoV(scoreAway, scoreHome);
-//						System.out.println("\t\t" + away + " (" + teams.get(away).getWins() + ", " + teams.get(away).getLosses() + ")");
 					}
-					
-					
-//					Thread.sleep(2000);
 
-				//End of the data
+				//</PRE> denotes end of the scores so stop checking once we hit that
 				} else if (str.equals("</PRE>")) {
 					break;
 				}
@@ -136,18 +148,31 @@ public class Poll {
 		}
 	}
 
+	//Calculate SoS and SoV for each team
 	public static void setTeamSoSSoV(Map<String, Team> teams) {
+		//Use iterator to loop through teams
 		Iterator it = teams.entrySet().iterator();
 		
 		//Iterate through teams
 		while (it.hasNext()) {
 			Map.Entry pair = (Map.Entry)it.next();
 			Team currTeam = (Team) pair.getValue();
-			
+
+			//Use opponents (name) and results (W/L)
 			ArrayList<String> opponents = currTeam.getOpponents();
 			ArrayList<String> results = currTeam.getResults();
 			
 			//Calc SoS and SoV
+			/*
+				SoS is record of opponents
+				SoV is record of opponents beaten without your win against them
+
+				Team A, B, and C play each other.  A beats B, B beats C, A beats C.
+				Records (A: 2-0, B: 1-1, C: 0-2)
+				A's SoS is 1-1 + 0-2 = 1-3 = .333
+				A's SoV is 1-0 + 0-1 = 1-1 = .500
+					Since they beat both B and C you remove a loss from each of B and C
+			 */
 			int SoSGames = 0, SoSWins = 0, SoVGames = 0, SoVWins = 0;		
 			for (int ii = 0; ii < opponents.size(); ii++) {
 				if (teams.containsKey(opponents.get(ii))) {
@@ -170,24 +195,28 @@ public class Poll {
 			}
 		}
 	}
-	
+
+	//Pull stats for each team
 	public static void getTeamStats(Map<String, Team> teams) {
-		File offense = new File("C:\\Users\\Taylor\\Documents\\Github\\CFBPoll\\TeamO.xlsx");
-		File defense = new File("C:\\Users\\Taylor\\Documents\\Github\\CFBPoll\\TeamD.xlsx");
+		//Stat files turned into 2D string arrays
+		File offense = new File(".\\rsc\\stats\\TeamO - " + date + ".xlsx");
+		File defense = new File(".\\rsc\\stats\\TeamD - " + date + ".xlsx");
 		ArrayList<ArrayList<String>> offenseSheet = getSpreadsheet(offense);
 		ArrayList<ArrayList<String>> defenseSheet = getSpreadsheet(defense);
-		
+
+		//Team names vary across sources.  Making consistent with UCLA page
 		fixNames(offenseSheet);
 		fixNames(defenseSheet);
-		
-		//YF
+
+		//TODO: turn into an all stats function and pass the sheet and column to get that stat
+		//YF are in column 15 of the offense sheet
 		for (int ii = 0; ii < offenseSheet.size(); ii++) {
 			if (teams.containsKey(offenseSheet.get(ii).get(1))) {
 				Team team = teams.get(offenseSheet.get(ii).get(1));
 				team.setYF(Double.parseDouble(offenseSheet.get(ii).get(14)));
 			}	
 		}
-		//YA
+		//YA are in column 15 of defense sheet
 		for (int ii = 0; ii < defenseSheet.size(); ii++) {
 			if (teams.containsKey(defenseSheet.get(ii).get(1))) {
 				Team team = teams.get(defenseSheet.get(ii).get(1));
@@ -195,7 +224,8 @@ public class Poll {
 			}	
 		}
 	}
-	
+
+	//Big group of if statements fixing names in the stat tables
 	public static void fixNames(ArrayList<ArrayList<String>> sheet) {
 		for (int ii = 0; ii < sheet.size(); ii++) {
 			for (int jj = 0; jj < sheet.get(ii).size(); jj++) {
@@ -309,7 +339,8 @@ public class Poll {
 			Workbook wb = new XSSFWorkbook(excelFile);
 			Sheet datatypeSheet = wb.getSheetAt(0);
 			Iterator<Row> iterator = datatypeSheet.iterator();
-			
+
+			//Loop through XLSX file
 			while (iterator.hasNext()) {
 				Row currentRow = iterator.next();
 				Iterator<Cell> cellIterator = currentRow.iterator();
@@ -317,29 +348,34 @@ public class Poll {
 				boolean startRow = true;
 				while (cellIterator.hasNext()) {
 					Cell currentCell = cellIterator.next();
-					
+
+					//If the first cell is blank, skip the row
 					if (startRow && currentCell.getCellTypeEnum()==CellType.BLANK) {
 						break;
+					//If the first cell isn't a number, skip the row
 					} else if (startRow && !Character.isDigit(currentCell.getStringCellValue().charAt(0))) {
 						break;
+					//Otherwise it is a valid stat row
 					} else {
 						startRow = false;
 					}
-					
+
+					//Add to arraylist
 					currRow.add(currentCell.getStringCellValue());
 				}
+				//If arraylist has data in it, add to 2D one
 				if (!currRow.isEmpty()) {
 					spreadsheet.add(currRow);
 				}
 			}
-			
 		} catch (Exception ioe) {
 			ioe.printStackTrace();
 		}
 		
 		return spreadsheet;
 	}
-	
+
+	//Print team rankings with some stats
 	public static void printTeamData(Map<String, Team> teams) {
 		Iterator it = teams.entrySet().iterator();
 		ArrayList<String> names = new ArrayList<String>();
@@ -350,10 +386,7 @@ public class Poll {
 			String tempName = ((Team) pair.getValue()).getName();
 			names.add(tempName);
 		}
-		
-		//Sort alphabetical
-//		names.sort(String::compareToIgnoreCase);
-		
+
 		//Sort by Points
 		for (int ii = 0; ii < names.size()-1; ii++) {
 			for (int jj = 0; jj < names.size()-ii-1; jj++) {
@@ -364,11 +397,13 @@ public class Poll {
 				}
 			}
 		}
-		
+
+		//To weight all teams against
+		double leader = teams.get(names.get(0)).calculateRank();
 		
 		//Print name and record
-		System.out.println("Number\tTeam\t\t\t\tPoints\tWins\tLosses\tPct\t\tSoS\t\tSoV\t\tAvgMoV\tYF\t\tYA");
-		System.out.println("=====================================================================================================");
+		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\tWins\tLosses\tPct\t\tSoS\t\tSoV\t\tAvgMoV\tYF\t\tYA");
+		System.out.println("==========================================================================================================");
 		for (int ii = 0; ii < names.size(); ii++) {
 			Team currTeam = teams.get(names.get(ii));
 			
@@ -394,7 +429,8 @@ public class Poll {
 			}
 
 			DecimalFormat dec0 = new DecimalFormat("#0.000");
-			//Ranking Points
+			//Ranking Score and Points
+			System.out.print(dec0.format(currTeam.calculateRank()/leader) + "\t");
 			System.out.print(dec0.format(currTeam.calculateRank()) + "\t");
 			
 			//Wins and Losses
@@ -402,7 +438,7 @@ public class Poll {
 			
 			DecimalFormat dec1 = new DecimalFormat("#0.0000");
 			//Win Pct
-			System.out.print("\t\t" + dec1.format(((double)currTeam.getWins())/(currTeam.getGames())));
+			System.out.print("\t\t" + dec1.format(currTeam.getPCT()));
 			//SoS and SoV
 			System.out.print("\t" + dec1.format(currTeam.getSoS()) + "\t" + dec1.format(currTeam.getSoV()));
 
@@ -413,22 +449,9 @@ public class Poll {
 			System.out.print("\t" + dec2.format(currTeam.getYF()));
 			//YA
 			System.out.print("\t" + dec2.format(currTeam.getYA()));
-			
+
+			//End line
 			System.out.println();
 		}
 	}
 }
-
-
-
-/*
-String textURL = "http://prwolfe.bol.ucla.edu/cfootball/scores.htm";
-URL url = new URL(textURL);
-URLConnection con = url.openConnection();
-InputStream is = con.getInputStream();
-BufferedReader br = new BufferedReader(new InputStreamReader(is));
-String line = null;
-while ((line = br.readLine()) != null) {
-	System.out.println(line);
-}
-*/
