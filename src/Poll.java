@@ -12,10 +12,7 @@ import java.io.FileInputStream;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
 
-/*	Philosophy
-
-	Gives credit for W/L against FCS but does not count towards SoV or So
-	Formula uses win percent, SoS, SoV, MoV (capped at 21), YF, and YA
+/*	Info
 
 	Final points are from the formula and then divided by the team with the most
 		so that #1 has 1.000 and the rest is relative to them
@@ -26,12 +23,12 @@ import org.apache.poi.xssf.usermodel.*;
 		https://www.sports-reference.com/cfb/years/2018-team-offense.html
  */
 
-//TODO: save game by game MoV to team and use to weight wins by opponent
-//TODO: 	rather than by schedule
-//TODO: use more stats (TO margin, Yards/Play, Pts/Drive
+//TODO: BCS-like SoS (use opponents opponents record)
+//TODO: clean up reused blocks into their own functions
+//TODO: use more advanced stats (TO margin, Yards/Play, Pts/Drive)
 
 public class Poll {
-	public static String date = "20180930";
+	public static String date = "20181007";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
@@ -45,9 +42,19 @@ public class Poll {
 		setTeamSoSSoV(teams);
 		//Pulls stats from sports-reference
 		getTeamStats(teams);
-		//Prints results, calculates score and points for each team using rank formula
-		printTeamData(teams);
-		
+
+		//Print poll
+		if (args[0].equals("Full")) {
+			printTeamData(teams, "Full");
+		} else if (args[0].equals("T25")) {
+			printTeamData(teams, "T25");
+		} else if (args[0].equals("Reddit")) {
+			printReddit(teams);
+		}
+
+		//Print info for an individual team
+//		printTeam(teams, "Florida");
+
 	}
 
 	//Gets team names from FBS.txt and stores in a map
@@ -163,16 +170,6 @@ public class Poll {
 			ArrayList<String> results = currTeam.getResults();
 			
 			//Calc SoS and SoV
-			/*
-				SoS is record of opponents
-				SoV is record of opponents beaten without your win against them
-
-				Team A, B, and C play each other.  A beats B, B beats C, A beats C.
-				Records (A: 2-0, B: 1-1, C: 0-2)
-				A's SoS is 1-1 + 0-2 = 1-3 = .333
-				A's SoV is 1-0 + 0-1 = 1-1 = .500
-					Since they beat both B and C you remove a loss from each of B and C
-			 */
 			int SoSGames = 0, SoSWins = 0, SoVGames = 0, SoVWins = 0;		
 			for (int ii = 0; ii < opponents.size(); ii++) {
 				if (teams.containsKey(opponents.get(ii))) {
@@ -376,7 +373,7 @@ public class Poll {
 	}
 
 	//Print team rankings with some stats
-	public static void printTeamData(Map<String, Team> teams) {
+	public static void printTeamData(Map<String, Team> teams, String type) {
 		Iterator it = teams.entrySet().iterator();
 		ArrayList<String> names = new ArrayList<String>();
 		
@@ -400,11 +397,19 @@ public class Poll {
 
 		//To weight all teams against
 		double leader = teams.get(names.get(0)).calculateRank();
-		
+
+		//Print full list or top 25
+		int count = 0;
+		if (type.equals("Full")) {
+			count = names.size()-1;
+		} else if (type.equals("T25")) {
+			count = 25;
+		}
+
 		//Print name and record
 		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\tWins\tLosses\tPct\t\tSoS\t\tSoV\t\tAvgMoV\tYF\t\tYA");
 		System.out.println("==========================================================================================================");
-		for (int ii = 0; ii < names.size(); ii++) {
+		for (int ii = 0; ii < count; ii++) {
 			Team currTeam = teams.get(names.get(ii));
 			
 			//Number
@@ -452,6 +457,58 @@ public class Poll {
 
 			//End line
 			System.out.println();
+		}
+	}
+
+	//Print in Reddit table format for copy paste
+	public static void printReddit(Map<String, Team> teams) {
+		Iterator it = teams.entrySet().iterator();
+		ArrayList<String> names = new ArrayList<String>();
+
+		//Get list of team names from map
+		while (it.hasNext()) {
+			Map.Entry pair = (Map.Entry)it.next();
+			String tempName = ((Team) pair.getValue()).getName();
+			names.add(tempName);
+		}
+
+		//Sort by Points
+		for (int ii = 0; ii < names.size()-1; ii++) {
+			for (int jj = 0; jj < names.size()-ii-1; jj++) {
+				if (teams.get(names.get(jj)).calculateRank() < teams.get(names.get(jj+1)).calculateRank()) {
+					String temp = names.get(jj);
+					names.set(jj, names.get(jj+1));
+					names.set(jj+1, temp);
+				}
+			}
+		}
+
+		//To weight all teams against
+		double leader = teams.get(names.get(0)).calculateRank();
+
+		System.out.println("Rank| Team | Score | Record\n---|---|---|---");
+
+		for (int ii = 0; ii < 25; ii++) {
+			Team currTeam = teams.get(names.get(ii));
+
+			//Ranking + Name
+			System.out.print((ii+1) + " | " + currTeam.getName() + " | ");
+
+			DecimalFormat dec0 = new DecimalFormat("#0.000");
+			//Ranking Score
+			System.out.print(dec0.format(currTeam.calculateRank()/leader) + " | ");
+
+			//Record
+			System.out.println(currTeam.getWins() + "-" + currTeam.getLosses());
+		}
+	}
+
+	//Print info for one team
+	private static void printTeam(Map<String, Team> teams, String teamName) {
+		Team team = teams.get(teamName);
+		System.out.println(teamName + "\n==============");
+		for (int ii = 0; ii < team.getOpponents().size(); ii++) {
+			System.out.println(team.getOpponents().get(ii) + "\t" + team.getResults().get(ii) + "\t" + team.getMargins().get(ii));
 		}
 	}
 }
