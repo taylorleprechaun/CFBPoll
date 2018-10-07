@@ -1,1 +1,3 @@
-rsc/* linguist-vendored=false
+rsc/*.htm linguist-vendored
+rsc/*.html linguist-vendored
+rsc/*.xlsx linguist-vendored
