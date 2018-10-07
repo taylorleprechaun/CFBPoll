@@ -1,3 +1,5 @@
 *.htm linguist-vendored
 *.html linguist-vendored
+*.xml linguist-vendored
+*.css linguist-vendored
 *.xlsx linguist-vendored
