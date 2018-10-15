@@ -23,12 +23,11 @@ import org.apache.poi.xssf.usermodel.*;
 		https://www.sports-reference.com/cfb/years/2018-team-offense.html
  */
 
-//TODO: BCS-like SoS (use opponents opponents record)
 //TODO: clean up reused blocks into their own functions
 //TODO: use more advanced stats (TO margin, Yards/Play, Pts/Drive)
 
 public class Poll {
-	public static String date = "20181007";
+	public static String date = "20181014";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
@@ -38,8 +37,8 @@ public class Poll {
 		generateTeams(teams);
 		//Pulls scores (and calculates record) of teams from UCLA page
 		getTeamResults(teams);
-		//Calculates SoS and SoV for each team using scores and records
-		setTeamSoSSoV(teams);
+		//Calculates SoS using basic and BCS-like formula
+		calcTeamBCSSoS(teams);
 		//Pulls stats from sports-reference
 		getTeamStats(teams);
 
@@ -80,7 +79,7 @@ public class Poll {
 			//Read from UCLA page html file
 			BufferedReader dataReader = new BufferedReader(new FileReader(".\\rsc\\scores\\2018 College Football - " + date + ".html"));
 			String str;
-			
+
 			while ((str = dataReader.readLine()) != null) {
 				//If not an empty line and starts with a date
 				if (!str.isEmpty() && Character.isDigit(str.charAt(0))) {
@@ -103,13 +102,13 @@ public class Poll {
 							ii++;
 						}
 					}
-					
+
 					//Make sure it contains eligible teams
 					if (!teams.containsKey(home) && !teams.containsKey(away)) {
 						//If neither team is FBS then skip and do next line
 						continue;
 					}
-					
+
 					int scoreAway, scoreHome;
 					//Away score
 					for (int ii = 38; ii < 40; ii++) {
@@ -128,7 +127,7 @@ public class Poll {
 						tempScore += str.charAt(ii);
 					}
 					scoreHome = Integer.parseInt(tempScore);
-					
+
 					//1 = home win, 0 = road win
 					int homeResult = (scoreHome>scoreAway)? 1:0;
 					int awayResult = (scoreHome<scoreAway)? 1:0;
@@ -136,12 +135,18 @@ public class Poll {
 					//Update team records + MoV
 					if (teams.containsKey(home)) {
 						teams.get(home).setRecord(homeResult);
-						teams.get(home).updateOpponents(away);
+						//Don't add FCS teams to opponent list
+						if (teams.containsKey(away)) {
+							teams.get(home).updateOpponents(away);
+						}
 						teams.get(home).setMoV(scoreHome, scoreAway);
 					}
 					if (teams.containsKey(away)) {
 						teams.get(away).setRecord(awayResult);
-						teams.get(away).updateOpponents(home);
+						//Don't add FCS teams to opponent list
+						if (teams.containsKey(home)) {
+							teams.get(away).updateOpponents(home);
+						}
 						teams.get(away).setMoV(scoreAway, scoreHome);
 					}
 
@@ -155,42 +160,55 @@ public class Poll {
 		}
 	}
 
-	//Calculate SoS and SoV for each team
-	public static void setTeamSoSSoV(Map<String, Team> teams) {
-		//Use iterator to loop through teams
+	//Calculate regular and BCS-like SoS for each team
+	public static void calcTeamBCSSoS(Map<String, Team> teams) {
+		//Hold the numbers
+		Map<String, Integer> allTeamWins = new HashMap<String, Integer>();
+		Map<String, Integer> allTeamGames = new HashMap<String, Integer>();
+
+		//Get team wins and games from all teams into new maps
 		Iterator it = teams.entrySet().iterator();
-		
-		//Iterate through teams
 		while (it.hasNext()) {
 			Map.Entry pair = (Map.Entry)it.next();
-			Team currTeam = (Team) pair.getValue();
+			String tempName = ((Team) pair.getValue()).getName();
+			Team tempTeam = teams.get(tempName);
+			allTeamWins.put(tempName, tempTeam.getWins());
+			allTeamGames.put(tempName, tempTeam.getGames());
+		}
 
-			//Use opponents (name) and results (W/L)
-			ArrayList<String> opponents = currTeam.getOpponents();
-			ArrayList<String> results = currTeam.getResults();
-			
-			//Calc SoS and SoV
-			int SoSGames = 0, SoSWins = 0, SoVGames = 0, SoVWins = 0;		
+		//Calculate each team's SoS
+		it = teams.entrySet().iterator();
+		while (it.hasNext()) {
+			//Get a team
+			Map.Entry pair = (Map.Entry)it.next();
+			String tempName = ((Team) pair.getValue()).getName();
+			Team tempTeam = teams.get(tempName);
+
+			//Get their opponents
+			ArrayList<String> opponents = tempTeam.getOpponents();
+
+			//Calculate SoS
+			double teamWins = 0;
+			double teamGames = 0;
+			double opponentWins = 0;
+			double opponentGames = 0;
 			for (int ii = 0; ii < opponents.size(); ii++) {
-				if (teams.containsKey(opponents.get(ii))) {
-					Team tempTeam = teams.get(opponents.get(ii));
-					SoSGames += tempTeam.getWins() + tempTeam.getLosses();
-					SoSWins += tempTeam.getWins();
-					if (results.get(ii).equals("W")) {
-						SoVWins += tempTeam.getWins();
-						SoVGames += tempTeam.getWins() + tempTeam.getLosses() - 1;
-					}
+				String opponentName = opponents.get(ii);
+				teamWins += allTeamWins.get(opponentName);
+				teamGames += allTeamGames.get(opponentName);
+				//And now we calculate the opponent SoS
+				Team opponentTeam = teams.get(opponentName);
+				ArrayList<String> oppOpponents = opponentTeam.getOpponents();
+				for (int jj = 0; jj < oppOpponents.size(); jj++) {
+					String oppOpponentName = oppOpponents.get(jj);
+					opponentWins += allTeamWins.get(oppOpponentName);
+					opponentGames += allTeamGames.get(oppOpponentName);
 				}
 			}
-			double SoS = (double) SoSWins/SoSGames;
-			currTeam.setSoS(SoS);
-			
-			double SoV = (double) SoVWins/SoVGames;
-			currTeam.setSoV(SoV);
-			if (SoVWins==0) {
-				currTeam.setSoV(0);
-			}
+			tempTeam.setSoS(teamWins/teamGames);
+			tempTeam.setOppSoS(opponentWins/opponentGames);
 		}
+
 	}
 
 	//Pull stats for each team
@@ -407,7 +425,7 @@ public class Poll {
 		}
 
 		//Print name and record
-		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\tWins\tLosses\tPct\t\tSoS\t\tSoV\t\tAvgMoV\tYF\t\tYA");
+		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\tWins\tLosses\tPct\t\tSoS\t\tBCS\t\tAvgMoV\tYF\t\tYA");
 		System.out.println("==========================================================================================================");
 		for (int ii = 0; ii < count; ii++) {
 			Team currTeam = teams.get(names.get(ii));
@@ -445,7 +463,7 @@ public class Poll {
 			//Win Pct
 			System.out.print("\t\t" + dec1.format(currTeam.getPCT()));
 			//SoS and SoV
-			System.out.print("\t" + dec1.format(currTeam.getSoS()) + "\t" + dec1.format(currTeam.getSoV()));
+			System.out.print("\t" + dec1.format(currTeam.getSoS()) + "\t" + dec1.format(currTeam.getBCSSoS()));
 
 			DecimalFormat dec2 = new DecimalFormat("#0.00");
 			//MoV
@@ -510,5 +528,6 @@ public class Poll {
 		for (int ii = 0; ii < team.getOpponents().size(); ii++) {
 			System.out.println(team.getOpponents().get(ii) + "\t" + team.getResults().get(ii) + "\t" + team.getMargins().get(ii));
 		}
+		System.out.println("SoS: " + team.getSoS() + "\nBCS: " + team.getBCSSoS());
 	}
 }

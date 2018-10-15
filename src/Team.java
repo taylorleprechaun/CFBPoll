@@ -4,12 +4,12 @@ public class Team {
 	private String name;
 	private int wins, losses, games, MoV, PF, PA;
 	private double YF, YA;
-	private double SoS, SoV, PCT;
+	private double SoS, oppSoS, PCT;
 	private ArrayList<String> opponents;
 	private ArrayList<String> results;
 	private ArrayList<Integer> margins;
 	private Rank teamRank;
-	
+
 	public Team(String name) {
 		wins = 0; losses = 0; games = 0;
 		MoV = 0; PF = 0; PA = 0;
@@ -23,7 +23,7 @@ public class Team {
 
 	//Calculates the teams rank in the system
 	public double calculateRank() {
-		return teamRank.calculateRank(PCT, YF, YA, SoS, SoV, MoV, PF, PA);
+		return teamRank.calculateRank(PCT, YF, YA, SoS, oppSoS, MoV, PF, PA);
 	}
 
 	//Getters and Setters
@@ -53,12 +53,6 @@ public class Team {
 	}
 	public void setSoS(double soS) {
 		this.SoS = soS;
-	}
-	public double getSoV() {
-		return SoV;
-	}
-	public void setSoV(double soV) {
-		this.SoV = soV;
 	}
 	public void updateOpponents(String opponent) {
 		opponents.add(opponent);
@@ -95,5 +89,14 @@ public class Team {
 	}
 	public double getYA() {
 		return YA;
+	}
+	public double getBCSSoS() {
+		return Rank.calculateBCSSoS(SoS, oppSoS);
+	}
+	public int getGames() {
+		return games;
+	}
+	public void setOppSoS(double oppSoS) {
+		this.oppSoS = oppSoS;
 	}
 }

@@ -19,23 +19,25 @@
       <file leaf-file-name="Poll.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Poll.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1106#1120#0" expanded="true" />
+                <element signature="e#1052#1066#0" expanded="true" />
                 <element signature="method#generateTeams#0;class#Poll#0" expanded="false" />
                 <element signature="method#getTeamResults#0;class#Poll#0" expanded="false" />
-                <element signature="method#setTeamSoSSoV#0;class#Poll#0" expanded="false" />
+                <element signature="method#calcTeamBCSSoS#0;class#Poll#0" expanded="false" />
+                <element signature="e#5135#5152#0" expanded="true" />
+                <element signature="e#5205#5222#0" expanded="true" />
                 <element signature="method#getTeamStats#0;class#Poll#0" expanded="false" />
                 <element signature="method#fixNames#0;class#Poll#0" expanded="false" />
                 <element signature="method#getSpreadsheet#0;class#Poll#0" expanded="false" />
-                <element signature="e#10986#11005#0" expanded="true" />
-                <element signature="e#11444#11452#0" expanded="true" />
+                <element signature="e#11695#11714#0" expanded="true" />
+                <element signature="e#12153#12161#0" expanded="true" />
                 <element signature="method#printTeamData#0;class#Poll#0" expanded="false" />
-                <element signature="e#12435#12443#0" expanded="true" />
+                <element signature="e#13144#13152#0" expanded="true" />
                 <element signature="method#printReddit#0;class#Poll#0" expanded="false" />
-                <element signature="e#15242#15250#0" expanded="true" />
+                <element signature="e#15954#15962#0" expanded="true" />
                 <element signature="method#printTeam#0;class#Poll#0" expanded="false" />
               </folding>
             </state>
@@ -45,11 +47,11 @@
       <file leaf-file-name="Team.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Team.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="119">
+              <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding>
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#747#748#0" expanded="true" />
+                <element signature="e#677#678#0" expanded="true" />
+                <element signature="e#752#753#0" expanded="true" />
                 <element signature="method#setRecord#0;class#Team#0" expanded="false" />
                 <element signature="method#setMoV#0;class#Team#0" expanded="false" />
               </folding>
@@ -60,9 +62,14 @@
       <file leaf-file-name="Rank.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Rank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="323">
+              <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+              <folding>
+                <element signature="method#getPFEffect#0;class#Rank#0" expanded="false" />
+                <element signature="method#getPAEffect#0;class#Rank#0" expanded="false" />
+                <element signature="method#getYFEffect#0;class#Rank#0" expanded="false" />
+                <element signature="method#getYAEffect#0;class#Rank#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,9 +100,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/rsc/scores/2018 College Football - 20180930.html" />
-        <option value="$PROJECT_DIR$/src/Team.java" />
         <option value="$PROJECT_DIR$/src/Rank.java" />
         <option value="$PROJECT_DIR$/src/Poll.java" />
+        <option value="$PROJECT_DIR$/src/Team.java" />
       </list>
     </option>
   </component>
@@ -120,7 +127,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -149,8 +158,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -162,6 +169,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RunManager" selected="Application.Top 25">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -434,7 +442,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -445,18 +453,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44637054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.59913325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18230277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19083156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -471,7 +479,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -486,19 +494,229 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1106#1120#0" expanded="true" />
+            <element signature="e#1052#1066#0" expanded="true" />
             <element signature="method#generateTeams#0;class#Poll#0" expanded="false" />
             <element signature="method#getTeamResults#0;class#Poll#0" expanded="false" />
-            <element signature="method#setTeamSoSSoV#0;class#Poll#0" expanded="false" />
+            <element signature="method#calcTeamBCSSoS#0;class#Poll#0" expanded="false" />
+            <element signature="e#5135#5152#0" expanded="true" />
+            <element signature="e#5205#5222#0" expanded="true" />
             <element signature="method#getTeamStats#0;class#Poll#0" expanded="false" />
             <element signature="method#fixNames#0;class#Poll#0" expanded="false" />
             <element signature="method#getSpreadsheet#0;class#Poll#0" expanded="false" />
-            <element signature="e#10986#11005#0" expanded="true" />
-            <element signature="e#11444#11452#0" expanded="true" />
+            <element signature="e#11695#11714#0" expanded="true" />
+            <element signature="e#12153#12161#0" expanded="true" />
             <element signature="method#printTeamData#0;class#Poll#0" expanded="false" />
-            <element signature="e#12435#12443#0" expanded="true" />
+            <element signature="e#13144#13152#0" expanded="true" />
             <element signature="method#printReddit#0;class#Poll#0" expanded="false" />
-            <element signature="e#15242#15250#0" expanded="true" />
+            <element signature="e#15954#15962#0" expanded="true" />
+            <element signature="method#printTeam#0;class#Poll#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="method#setRecord#0;class#Team#0" expanded="false" />
+            <element signature="method#setMoV#0;class#Team#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" column="62" lean-forward="false" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
+          <folding>
+            <element signature="method#getPFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getPAEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYAEffect#0;class#Rank#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Poll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1052#1066#0" expanded="true" />
+            <element signature="method#generateTeams#0;class#Poll#0" expanded="false" />
+            <element signature="method#getTeamResults#0;class#Poll#0" expanded="false" />
+            <element signature="method#calcTeamBCSSoS#0;class#Poll#0" expanded="false" />
+            <element signature="e#5135#5152#0" expanded="true" />
+            <element signature="e#5205#5222#0" expanded="true" />
+            <element signature="method#getTeamStats#0;class#Poll#0" expanded="false" />
+            <element signature="method#fixNames#0;class#Poll#0" expanded="false" />
+            <element signature="method#getSpreadsheet#0;class#Poll#0" expanded="false" />
+            <element signature="e#11695#11714#0" expanded="true" />
+            <element signature="e#12153#12161#0" expanded="true" />
+            <element signature="method#printTeamData#0;class#Poll#0" expanded="false" />
+            <element signature="e#13144#13152#0" expanded="true" />
+            <element signature="method#printReddit#0;class#Poll#0" expanded="false" />
+            <element signature="e#15954#15962#0" expanded="true" />
+            <element signature="method#printTeam#0;class#Poll#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="method#setRecord#0;class#Team#0" expanded="false" />
+            <element signature="method#setMoV#0;class#Team#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" column="62" lean-forward="false" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
+          <folding>
+            <element signature="method#getPFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getPAEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYAEffect#0;class#Rank#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Poll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1052#1066#0" expanded="true" />
+            <element signature="method#generateTeams#0;class#Poll#0" expanded="false" />
+            <element signature="method#getTeamResults#0;class#Poll#0" expanded="false" />
+            <element signature="method#calcTeamBCSSoS#0;class#Poll#0" expanded="false" />
+            <element signature="e#5135#5152#0" expanded="true" />
+            <element signature="e#5205#5222#0" expanded="true" />
+            <element signature="method#getTeamStats#0;class#Poll#0" expanded="false" />
+            <element signature="method#fixNames#0;class#Poll#0" expanded="false" />
+            <element signature="method#getSpreadsheet#0;class#Poll#0" expanded="false" />
+            <element signature="e#11695#11714#0" expanded="true" />
+            <element signature="e#12153#12161#0" expanded="true" />
+            <element signature="method#printTeamData#0;class#Poll#0" expanded="false" />
+            <element signature="e#13144#13152#0" expanded="true" />
+            <element signature="method#printReddit#0;class#Poll#0" expanded="false" />
+            <element signature="e#15954#15962#0" expanded="true" />
+            <element signature="method#printTeam#0;class#Poll#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="method#setRecord#0;class#Team#0" expanded="false" />
+            <element signature="method#setMoV#0;class#Team#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" column="62" lean-forward="true" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
+          <folding>
+            <element signature="method#getPFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getPAEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYAEffect#0;class#Rank#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Poll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1052#1066#0" expanded="true" />
+            <element signature="method#generateTeams#0;class#Poll#0" expanded="false" />
+            <element signature="method#getTeamResults#0;class#Poll#0" expanded="false" />
+            <element signature="method#calcTeamBCSSoS#0;class#Poll#0" expanded="false" />
+            <element signature="e#5135#5152#0" expanded="true" />
+            <element signature="e#5205#5222#0" expanded="true" />
+            <element signature="method#getTeamStats#0;class#Poll#0" expanded="false" />
+            <element signature="method#fixNames#0;class#Poll#0" expanded="false" />
+            <element signature="method#getSpreadsheet#0;class#Poll#0" expanded="false" />
+            <element signature="e#11695#11714#0" expanded="true" />
+            <element signature="e#12153#12161#0" expanded="true" />
+            <element signature="method#printTeamData#0;class#Poll#0" expanded="false" />
+            <element signature="e#13144#13152#0" expanded="true" />
+            <element signature="method#printReddit#0;class#Poll#0" expanded="false" />
+            <element signature="e#15954#15962#0" expanded="true" />
+            <element signature="method#printTeam#0;class#Poll#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="method#setRecord#0;class#Team#0" expanded="false" />
+            <element signature="method#setMoV#0;class#Team#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="method#getPFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getPAEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYAEffect#0;class#Rank#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Poll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1052#1066#0" expanded="true" />
+            <element signature="method#generateTeams#0;class#Poll#0" expanded="false" />
+            <element signature="method#getTeamResults#0;class#Poll#0" expanded="false" />
+            <element signature="method#calcTeamBCSSoS#0;class#Poll#0" expanded="false" />
+            <element signature="e#5135#5152#0" expanded="true" />
+            <element signature="e#5205#5222#0" expanded="true" />
+            <element signature="method#getTeamStats#0;class#Poll#0" expanded="false" />
+            <element signature="method#fixNames#0;class#Poll#0" expanded="false" />
+            <element signature="method#getSpreadsheet#0;class#Poll#0" expanded="false" />
+            <element signature="e#11695#11714#0" expanded="true" />
+            <element signature="e#12153#12161#0" expanded="true" />
+            <element signature="method#printTeamData#0;class#Poll#0" expanded="false" />
+            <element signature="e#13144#13152#0" expanded="true" />
+            <element signature="method#printReddit#0;class#Poll#0" expanded="false" />
+            <element signature="e#15954#15962#0" expanded="true" />
             <element signature="method#printTeam#0;class#Poll#0" expanded="false" />
           </folding>
         </state>
@@ -509,8 +727,8 @@
         <state relative-caret-position="1734">
           <caret line="141" column="22" lean-forward="false" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
           <folding>
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
             <element signature="method#setRecord#0;class#Team#0" expanded="false" />
             <element signature="method#setMoV#0;class#Team#0" expanded="false" />
           </folding>
@@ -523,19 +741,21 @@
           <caret line="367" column="8" lean-forward="true" selection-start-line="367" selection-start-column="8" selection-end-line="367" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1106#1120#0" expanded="true" />
+            <element signature="e#1052#1066#0" expanded="true" />
             <element signature="method#generateTeams#0;class#Poll#0" expanded="false" />
             <element signature="method#getTeamResults#0;class#Poll#0" expanded="false" />
-            <element signature="method#setTeamSoSSoV#0;class#Poll#0" expanded="false" />
+            <element signature="method#calcTeamBCSSoS#0;class#Poll#0" expanded="false" />
+            <element signature="e#5135#5152#0" expanded="true" />
+            <element signature="e#5205#5222#0" expanded="true" />
             <element signature="method#getTeamStats#0;class#Poll#0" expanded="false" />
             <element signature="method#fixNames#0;class#Poll#0" expanded="false" />
             <element signature="method#getSpreadsheet#0;class#Poll#0" expanded="false" />
-            <element signature="e#10986#11005#0" expanded="true" />
-            <element signature="e#11444#11452#0" expanded="true" />
+            <element signature="e#11695#11714#0" expanded="true" />
+            <element signature="e#12153#12161#0" expanded="true" />
             <element signature="method#printTeamData#0;class#Poll#0" expanded="false" />
-            <element signature="e#12435#12443#0" expanded="true" />
+            <element signature="e#13144#13152#0" expanded="true" />
             <element signature="method#printReddit#0;class#Poll#0" expanded="false" />
-            <element signature="e#15242#15250#0" expanded="true" />
+            <element signature="e#15954#15962#0" expanded="true" />
             <element signature="method#printTeam#0;class#Poll#0" expanded="false" />
           </folding>
         </state>
@@ -546,8 +766,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
             <element signature="method#setRecord#0;class#Team#0" expanded="false" />
             <element signature="method#setMoV#0;class#Team#0" expanded="false" />
           </folding>
@@ -570,33 +790,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/RankHistory/20181009 - Rank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Rank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding>
+            <element signature="method#getPFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getPAEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYFEffect#0;class#Rank#0" expanded="false" />
+            <element signature="method#getYAEffect#0;class#Rank#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Poll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1106#1120#0" expanded="true" />
+            <element signature="e#1052#1066#0" expanded="true" />
             <element signature="method#generateTeams#0;class#Poll#0" expanded="false" />
             <element signature="method#getTeamResults#0;class#Poll#0" expanded="false" />
-            <element signature="method#setTeamSoSSoV#0;class#Poll#0" expanded="false" />
+            <element signature="method#calcTeamBCSSoS#0;class#Poll#0" expanded="false" />
+            <element signature="e#5135#5152#0" expanded="true" />
+            <element signature="e#5205#5222#0" expanded="true" />
             <element signature="method#getTeamStats#0;class#Poll#0" expanded="false" />
             <element signature="method#fixNames#0;class#Poll#0" expanded="false" />
             <element signature="method#getSpreadsheet#0;class#Poll#0" expanded="false" />
-            <element signature="e#10986#11005#0" expanded="true" />
-            <element signature="e#11444#11452#0" expanded="true" />
+            <element signature="e#11695#11714#0" expanded="true" />
+            <element signature="e#12153#12161#0" expanded="true" />
             <element signature="method#printTeamData#0;class#Poll#0" expanded="false" />
-            <element signature="e#12435#12443#0" expanded="true" />
+            <element signature="e#13144#13152#0" expanded="true" />
             <element signature="method#printReddit#0;class#Poll#0" expanded="false" />
-            <element signature="e#15242#15250#0" expanded="true" />
+            <element signature="e#15954#15962#0" expanded="true" />
             <element signature="method#printTeam#0;class#Poll#0" expanded="false" />
           </folding>
         </state>
@@ -604,11 +839,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Team.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="119">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding>
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
             <element signature="method#setRecord#0;class#Team#0" expanded="false" />
             <element signature="method#setMoV#0;class#Team#0" expanded="false" />
           </folding>
