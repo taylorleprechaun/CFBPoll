@@ -27,7 +27,7 @@ import org.apache.poi.xssf.usermodel.*;
 //TODO: use more advanced stats (TO margin, Yards/Play, Pts/Drive)
 
 public class Poll {
-	public static String date = "20181014";
+	public static String date = "20181031";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
