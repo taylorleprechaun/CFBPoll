@@ -10,47 +10,49 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 ### Recent changes
 
-* No changes since last week (10/14).  Just an update to rankings.
+* Slight adjustment to formula.  Nothing else of note.
 
 ### Rankings
 
-As of 10/21/2018:
+As of 10/31/2018:
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Alabama | 1.000 | 8-0
-2 | Clemson | 0.983 | 7-0
-3 | Georgia | 0.800 | 6-1
-4 | Michigan | 0.797 | 7-1
-5 | LSU | 0.793 | 7-1
-6 | Notre Dame | 0.777 | 7-0
-7 | Florida | 0.760 | 6-1
-8 | Central Florida | 0.740 | 7-0
-9 | Oklahoma | 0.731 | 6-1
-10 | Appalachian St | 0.700 | 5-1
-11 | Ohio State | 0.681 | 7-1
-12 | Kentucky | 0.677 | 6-1
-13 | Iowa | 0.671 | 6-1
-14 | Fresno St | 0.666 | 6-1
-15 | Alabama-Birmingham | 0.665 | 6-1
-16 | Utah St | 0.657 | 6-1
-17 | Miami FL | 0.653 | 5-2
-18 | North Carolina St | 0.650 | 5-1
-19 | Washington | 0.628 | 6-2
-20 | Cincinnati | 0.623 | 6-1
-21 | West Virginia | 0.621 | 5-1
-22 | Penn State | 0.609 | 5-2
-23 | Texas A&M | 0.608 | 5-2
-24 | Buffalo | 0.602 | 7-1
-25 | North Texas | 0.595 | 6-2
+1 | Clemson | 1.000 | 8-0
+2 | Alabama | 0.894 | 8-0
+3 | Georgia | 0.793 | 7-1
+4 | LSU | 0.778 | 7-1
+5 | Michigan | 0.764 | 7-1
+6 | Oklahoma | 0.754 | 7-1
+7 | Notre Dame | 0.725 | 8-0
+8 | Fresno St | 0.712 | 7-1
+9 | Central Florida | 0.694 | 7-0
+10 | Utah St | 0.686 | 7-1
+11 | Kentucky | 0.670 | 7-1
+12 | Washington St | 0.655 | 7-1
+13 | Ohio State | 0.655 | 7-1
+14 | West Virginia | 0.653 | 6-1
+15 | Florida | 0.643 | 6-2
+16 | Appalachian St | 0.634 | 5-2
+17 | Houston | 0.632 | 7-1
+18 | Alabama-Birmingham | 0.623 | 7-1
+19 | Penn State | 0.622 | 6-2
+20 | Cincinnati | 0.608 | 7-1
+21 | Iowa | 0.607 | 6-2
+22 | Utah | 0.606 | 6-2
+23 | Georgia Southern | 0.602 | 7-1
+24 | Buffalo | 0.599 | 8-1*
+25 | Syracuse | 0.591 | 6-2
 
 #### Observations and Notes
 
+* To start with, I was lazy and didn't run this until 11/1 before any games were played that day.  As a result, any games from 10/30-31 have been included in the polls (i.e. 8-1 Buffalo), so this week's poll is a little messed up.
+
 * Once again, I need to get better stats for the rankings.
 
-* Appalachian State at #10 is kind of funny.
+* The poll seems to be valuing wins just a bit too much, even with my SoS metric trying to weigh it.  As a result, many of the better G5 teams are getting pushed higher up than I feel they should.  i.e. Georgia Southern at #23 when Sagarin and S&P+ have them at 80 and 61, respectively.
 
-* Notable Absenses: Washington State (#26), Texas (#31), USF (#38)
+* Notable Absenses: Texas (#40)
 
 ### TODO List
 
@@ -58,6 +60,8 @@ Rank| Team | Score | Record
 
 2. Use better stats and find ones that limit the effect of garbage time
 
-3. Clean up the code (many blocks which can be refactored into cleaner functions and some ugly code exist (like in the renaming function))
+3. Adjust wins/SoS weighting in combination with new stats to rank teams better
 
-4. Figure out goal of this poll
+4. Clean up the code (many blocks which can be refactored into cleaner functions and some ugly code exist (like in the renaming function))
+
+5. Figure out goal of this poll
