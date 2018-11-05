@@ -20,27 +20,27 @@ import org.apache.poi.xssf.usermodel.*;
 	Sources:
 	Scores - http://prwolfe.bol.ucla.edu/cfootball/scores.htm
 	Stats - https://www.sports-reference.com/cfb/years/2018-team-defense.html
-		https://www.sports-reference.com/cfb/years/2018-team-offense.html
+			https://www.sports-reference.com/cfb/years/2018-team-offense.html
  */
 
 //TODO: clean up reused blocks into their own functions
-//TODO: use more advanced stats (TO margin, Yards/Play, Pts/Drive)
 
 public class Poll {
-	public static String date = "20181031";
+	public static String date = "20181104";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
-		Map<String, Team> teams = new HashMap<String, Team>();
+		Map<String, Team> teams = new HashMap<>();
 
 		//Gets FBS teams from FBS.txt
 		generateTeams(teams);
 		//Pulls scores (and calculates record) of teams from UCLA page
 		getTeamResults(teams);
-		//Calculates SoS using basic and BCS-like formula
-		calcTeamBCSSoS(teams);
 		//Pulls stats from sports-reference
 		getTeamStats(teams);
+		//Calculates SoS using basic and BCS-like formula
+		calcTeamBCSSoS(teams);
+
 
 		//Print poll
 		if (args[0].equals("Full")) {
@@ -53,7 +53,6 @@ public class Poll {
 
 		//Print info for an individual team
 //		printTeam(teams, "Florida");
-
 	}
 
 	//Gets team names from FBS.txt and stores in a map
@@ -132,22 +131,22 @@ public class Poll {
 					int homeResult = (scoreHome>scoreAway)? 1:0;
 					int awayResult = (scoreHome<scoreAway)? 1:0;
 
-					//Update team records + MoV
+					//Update team records
 					if (teams.containsKey(home)) {
 						teams.get(home).setRecord(homeResult);
 						//Don't add FCS teams to opponent list
 						if (teams.containsKey(away)) {
 							teams.get(home).updateOpponents(away);
+							teams.get(home).updateResults(homeResult);
 						}
-						teams.get(home).setMoV(scoreHome, scoreAway);
 					}
 					if (teams.containsKey(away)) {
 						teams.get(away).setRecord(awayResult);
 						//Don't add FCS teams to opponent list
 						if (teams.containsKey(home)) {
 							teams.get(away).updateOpponents(home);
+							teams.get(away).updateResults(awayResult);
 						}
-						teams.get(away).setMoV(scoreAway, scoreHome);
 					}
 
 				//</PRE> denotes end of the scores so stop checking once we hit that
@@ -163,8 +162,8 @@ public class Poll {
 	//Calculate regular and BCS-like SoS for each team
 	public static void calcTeamBCSSoS(Map<String, Team> teams) {
 		//Hold the numbers
-		Map<String, Integer> allTeamWins = new HashMap<String, Integer>();
-		Map<String, Integer> allTeamGames = new HashMap<String, Integer>();
+		Map<String, Integer> allTeamWins = new HashMap<>();
+		Map<String, Integer> allTeamGames = new HashMap<>();
 
 		//Get team wins and games from all teams into new maps
 		Iterator it = teams.entrySet().iterator();
@@ -173,7 +172,7 @@ public class Poll {
 			String tempName = ((Team) pair.getValue()).getName();
 			Team tempTeam = teams.get(tempName);
 			allTeamWins.put(tempName, tempTeam.getWins());
-			allTeamGames.put(tempName, tempTeam.getGames());
+			allTeamGames.put(tempName, (int)Math.round(tempTeam.getOffenseStats().getGames()));
 		}
 
 		//Calculate each team's SoS
@@ -223,20 +222,25 @@ public class Poll {
 		fixNames(offenseSheet);
 		fixNames(defenseSheet);
 
-		//TODO: turn into an all stats function and pass the sheet and column to get that stat
-		//YF are in column 15 of the offense sheet
+		//Get team stats for offense
 		for (int ii = 0; ii < offenseSheet.size(); ii++) {
-			if (teams.containsKey(offenseSheet.get(ii).get(1))) {
-				Team team = teams.get(offenseSheet.get(ii).get(1));
-				team.setYF(Double.parseDouble(offenseSheet.get(ii).get(14)));
-			}	
+			ArrayList<Double> offenseStats = new ArrayList<>();
+			Team team = teams.get(offenseSheet.get(ii).get(1));
+			for (int jj = 2; jj < offenseSheet.get(jj).size(); jj++) {
+				double t = Double.parseDouble(offenseSheet.get(ii).get(jj));
+				offenseStats.add(Double.parseDouble(offenseSheet.get(ii).get(jj)));
+			}
+			team.setOffenseStats(new Stats(offenseStats));
 		}
-		//YA are in column 15 of defense sheet
+
+		//Get team stats for defense
 		for (int ii = 0; ii < defenseSheet.size(); ii++) {
-			if (teams.containsKey(defenseSheet.get(ii).get(1))) {
-				Team team = teams.get(defenseSheet.get(ii).get(1));
-				team.setYA(Double.parseDouble(defenseSheet.get(ii).get(14)));
-			}	
+			ArrayList<Double> defenseStats = new ArrayList<>();
+			Team team = teams.get(defenseSheet.get(ii).get(1));
+			for (int jj = 2; jj < defenseSheet.get(jj).size(); jj++) {
+				defenseStats.add(Double.parseDouble(defenseSheet.get(ii).get(jj)));
+			}
+			team.setDefenseStats(new Stats(defenseStats));
 		}
 	}
 
@@ -346,7 +350,7 @@ public class Poll {
 	
 	//Get spreadsheet from file
 	public static ArrayList<ArrayList<String>> getSpreadsheet(File file) {
-		ArrayList<ArrayList<String>> spreadsheet = new ArrayList<ArrayList<String>>();
+		ArrayList<ArrayList<String>> spreadsheet = new ArrayList<>();
 		
 		try {
 			//Apache POI setup
@@ -359,7 +363,7 @@ public class Poll {
 			while (iterator.hasNext()) {
 				Row currentRow = iterator.next();
 				Iterator<Cell> cellIterator = currentRow.iterator();
-				ArrayList<String> currRow = new ArrayList<String>();
+				ArrayList<String> currRow = new ArrayList<>();
 				boolean startRow = true;
 				while (cellIterator.hasNext()) {
 					Cell currentCell = cellIterator.next();
@@ -393,7 +397,7 @@ public class Poll {
 	//Print team rankings with some stats
 	public static void printTeamData(Map<String, Team> teams, String type) {
 		Iterator it = teams.entrySet().iterator();
-		ArrayList<String> names = new ArrayList<String>();
+		ArrayList<String> names = new ArrayList<>();
 		
 		//Get list of team names from map
 		while (it.hasNext()) {
@@ -424,9 +428,9 @@ public class Poll {
 			count = 25;
 		}
 
-		//Print name and record
-		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\tWins\tLosses\tPct\t\tSoS\t\tBCS\t\tAvgMoV\tYF\t\tYA");
-		System.out.println("==========================================================================================================");
+		//Header to print out select stats
+		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\t\tW\tL\tPct\t\tSoS\t\tWeighted\tAvgMoV\tYF\t\tYA\t\tTO Margin");
+		System.out.println("=====================================================================================================================");
 		for (int ii = 0; ii < count; ii++) {
 			Team currTeam = teams.get(names.get(ii));
 			
@@ -451,28 +455,30 @@ public class Poll {
 				System.out.print("\t");
 			}
 
-			DecimalFormat dec0 = new DecimalFormat("#0.000");
+			DecimalFormat dec1 = new DecimalFormat("#0.0");
+			DecimalFormat dec2 = new DecimalFormat("#0.00");
+			DecimalFormat dec3 = new DecimalFormat("#0.000");
+			DecimalFormat dec4 = new DecimalFormat("#0.0000");
+
 			//Ranking Score and Points
-			System.out.print(dec0.format(currTeam.calculateRank()/leader) + "\t");
-			System.out.print(dec0.format(currTeam.calculateRank()) + "\t");
+			System.out.print(dec4.format(currTeam.calculateRank()/leader) + "\t");
+			System.out.print(dec3.format(currTeam.calculateRank()) + "\t\t");
 			
 			//Wins and Losses
-			System.out.print(currTeam.getWins() + "\t\t" + currTeam.getLosses());
-			
-			DecimalFormat dec1 = new DecimalFormat("#0.0000");
+			System.out.print(currTeam.getWins() + "\t" + currTeam.getLosses());
+
 			//Win Pct
-			System.out.print("\t\t" + dec1.format(currTeam.getPCT()));
+			System.out.print("\t" + dec4.format(currTeam.getPCT()));
 			//SoS and SoV
-			System.out.print("\t" + dec1.format(currTeam.getSoS()) + "\t" + dec1.format(currTeam.getBCSSoS()));
-
-			DecimalFormat dec2 = new DecimalFormat("#0.00");
+			System.out.print("\t" + dec4.format(currTeam.getSoS()) + "\t" + dec4.format(currTeam.getWeightedSoS()));
 			//MoV
-			System.out.print("\t" + dec2.format(currTeam.getAvgMoV()));
+			System.out.print("\t\t" + dec2.format(currTeam.getOffenseStats().getPoints() - currTeam.getDefenseStats().getPoints()));
 			//YF
-			System.out.print("\t" + dec2.format(currTeam.getYF()));
+			System.out.print("\t" + dec1.format(currTeam.getOffenseStats().getTotalYards()));
 			//YA
-			System.out.print("\t" + dec2.format(currTeam.getYA()));
-
+			System.out.print("\t" + dec1.format(currTeam.getDefenseStats().getTotalYards()));
+			//TO Margin
+			System.out.print("\t" + dec2.format(currTeam.getDefenseStats().getTotalTO()-currTeam.getOffenseStats().getTotalTO()));
 			//End line
 			System.out.println();
 		}
@@ -481,7 +487,7 @@ public class Poll {
 	//Print in Reddit table format for copy paste
 	public static void printReddit(Map<String, Team> teams) {
 		Iterator it = teams.entrySet().iterator();
-		ArrayList<String> names = new ArrayList<String>();
+		ArrayList<String> names = new ArrayList<>();
 
 		//Get list of team names from map
 		while (it.hasNext()) {
@@ -512,9 +518,9 @@ public class Poll {
 			//Ranking + Name
 			System.out.print((ii+1) + " | " + currTeam.getName() + " | ");
 
-			DecimalFormat dec0 = new DecimalFormat("#0.000");
+			DecimalFormat dec4 = new DecimalFormat("#0.0000");
 			//Ranking Score
-			System.out.print(dec0.format(currTeam.calculateRank()/leader) + " | ");
+			System.out.print(dec4.format(currTeam.calculateRank()/leader) + " | ");
 
 			//Record
 			System.out.println(currTeam.getWins() + "-" + currTeam.getLosses());
@@ -526,8 +532,9 @@ public class Poll {
 		Team team = teams.get(teamName);
 		System.out.println(teamName + "\n==============");
 		for (int ii = 0; ii < team.getOpponents().size(); ii++) {
-			System.out.println(team.getOpponents().get(ii) + "\t" + team.getResults().get(ii) + "\t" + team.getMargins().get(ii));
+			System.out.println(team.getOpponents().get(ii) + " " + team.getResults().get(ii));
 		}
-		System.out.println("SoS: " + team.getSoS() + "\nBCS: " + team.getBCSSoS());
+		DecimalFormat dec4 = new DecimalFormat("#0.0000");
+		System.out.println("SoS: " + dec4.format(team.getSoS()) + "\nWeighted: " + dec4.format(team.getWeightedSoS()));
 	}
 }
