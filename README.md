@@ -10,58 +10,62 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 ### Recent changes
 
-* Slight adjustment to formula.  Nothing else of note.
+* Poll class - minor changes to code structure, behavior is basically the same
+
+* Team class - changes to a few fields, converted individual stats fields to a Stat class
+
+* **Stats class (new)** - Holds team offense and team defense stats
+
+* Rank class - formula update
 
 ### Rankings
 
-As of 10/31/2018:
+**Week 11 Rankings**
+
+(As of 11/4/2018)
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Clemson | 1.000 | 8-0
-2 | Alabama | 0.894 | 8-0
-3 | Georgia | 0.793 | 7-1
-4 | LSU | 0.778 | 7-1
-5 | Michigan | 0.764 | 7-1
-6 | Oklahoma | 0.754 | 7-1
-7 | Notre Dame | 0.725 | 8-0
-8 | Fresno St | 0.712 | 7-1
-9 | Central Florida | 0.694 | 7-0
-10 | Utah St | 0.686 | 7-1
-11 | Kentucky | 0.670 | 7-1
-12 | Washington St | 0.655 | 7-1
-13 | Ohio State | 0.655 | 7-1
-14 | West Virginia | 0.653 | 6-1
-15 | Florida | 0.643 | 6-2
-16 | Appalachian St | 0.634 | 5-2
-17 | Houston | 0.632 | 7-1
-18 | Alabama-Birmingham | 0.623 | 7-1
-19 | Penn State | 0.622 | 6-2
-20 | Cincinnati | 0.608 | 7-1
-21 | Iowa | 0.607 | 6-2
-22 | Utah | 0.606 | 6-2
-23 | Georgia Southern | 0.602 | 7-1
-24 | Buffalo | 0.599 | 8-1*
-25 | Syracuse | 0.591 | 6-2
+1 | Clemson | 1.0000 | 9-0
+2 | Alabama | 0.9733 | 9-0
+3 | Georgia | 0.9683 | 8-1
+4 | Notre Dame | 0.9620 | 9-0
+5 | Michigan | 0.9433 | 8-1
+6 | LSU | 0.9327 | 7-2
+7 | Central Florida | 0.9308 | 8-0
+8 | Oklahoma | 0.9065 | 8-1
+9 | West Virginia | 0.8883 | 7-1
+10 | Washington St | 0.8735 | 8-1
+11 | Kentucky | 0.8687 | 7-2
+12 | North Carolina St | 0.8675 | 6-2
+13 | Fresno St | 0.8557 | 8-1
+14 | Buffalo | 0.8533 | 8-1
+15 | Utah St | 0.8485 | 8-1
+16 | Ohio State | 0.8466 | 8-1
+17 | Alabama-Birmingham | 0.8464 | 8-1
+18 | Cincinnati | 0.8446 | 8-1
+19 | Syracuse | 0.8387 | 7-2
+20 | Boston College | 0.8327 | 7-2
+21 | Mississippi St | 0.8323 | 6-3
+22 | Army | 0.8319 | 7-2
+23 | Florida | 0.8305 | 6-3
+24 | Georgia Southern | 0.8237 | 7-2
+25 | Appalachian St | 0.8226 | 6-2
 
 #### Observations and Notes
 
-* To start with, I was lazy and didn't run this until 11/1 before any games were played that day.  As a result, any games from 10/30-31 have been included in the polls (i.e. 8-1 Buffalo), so this week's poll is a little messed up.
+* Okay, now we're getting somewhere.  Poll is starting to look real legit now.  Recent changes introduced some stats which are new to the poll.
 
-* Once again, I need to get better stats for the rankings.
+* So the big thing is Clemson over Bama.  The poll sees them as very similar, the biggest difference coming from my strength of schedule metric.
 
-* The poll seems to be valuing wins just a bit too much, even with my SoS metric trying to weigh it.  As a result, many of the better G5 teams are getting pushed higher up than I feel they should.  i.e. Georgia Southern at #23 when Sagarin and S&P+ have them at 80 and 61, respectively.
+* Ohio State at #16?  Once again, strength of schedule knocks a team down.  Teams around them like Utah State, Buffalo, and Fresno State have similarly ranked schedules, which is why they are all so close.  They should pull ahead in the remaining weeks of the season.
 
-* Notable Absenses: Texas (#40)
+* Notable absences: Penn State (#27), Washington (#29), Texas (#42).
 
 ### TODO List
 
-1. Introduction of head-to-head results
+1. Introduction of head-to-head results?
 
-2. Use better stats and find ones that limit the effect of garbage time
+2. Clean up the code (many blocks which can be refactored into cleaner functions and some ugly code exist (like in the renaming function))
 
-3. Adjust wins/SoS weighting in combination with new stats to rank teams better
-
-4. Clean up the code (many blocks which can be refactored into cleaner functions and some ugly code exist (like in the renaming function))
-
-5. Figure out goal of this poll
+3. Figure out goal of this poll
