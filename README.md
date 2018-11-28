@@ -10,52 +10,54 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 ### Recent changes
 
-* No changes to poll this week, just new rankings
+* Minor tweaks to formula
 
 ### Rankings
 
-**Week 12 Rankings**
+**Week 14 Rankings**
 
-(As of 11/13/2018)
+(As of 11/27/2018)
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Clemson | 1.0000 | 10-0
-2 | Alabama | 0.9805 | 10-0
-3 | Georgia | 0.9654 | 9-1
-4 | Notre Dame | 0.9607 | 10-0
-5 | Michigan | 0.9266 | 9-1
-6 | Central Florida | 0.9248 | 9-0
-7 | Oklahoma | 0.9083 | 9-1
-8 | LSU | 0.9078 | 8-2
-9 | West Virginia | 0.8898 | 8-1
-10 | Washington St | 0.8790 | 9-1
-11 | Ohio State | 0.8698 | 9-1
-12 | Cincinnati | 0.8646 | 9-1
-13 | Army | 0.8530 | 8-2
-14 | Buffalo | 0.8493 | 9-1
-15 | Utah St | 0.8439 | 9-1
-16 | Alabama-Birmingham | 0.8432 | 9-1
-17 | Florida | 0.8373 | 7-3
-18 | Boise St | 0.8354 | 8-2
-19 | Syracuse | 0.8331 | 8-2
-20 | Fresno St | 0.8229 | 8-2
-21 | Penn State | 0.8227 | 7-3
-22 | Troy | 0.8219 | 8-2
-23 | Appalachian St | 0.8176 | 7-2
-24 | Utah | 0.8171 | 7-3
-25 | Kentucky | 0.8127 | 7-3
+1 | Clemson | 1.0000 | 12-0
+2 | Alabama | 0.9847 | 12-0
+3 | Notre Dame | 0.9737 | 12-0
+4 | Georgia | 0.9645 | 11-1
+5 | Central Florida | 0.9495 | 11-0
+6 | Oklahoma | 0.9109 | 11-1
+7 | Ohio State | 0.8920 | 11-1
+8 | Michigan | 0.8884 | 10-2
+9 | Florida | 0.8663 | 9-3
+10 | Army | 0.8661 | 9-2
+11 | LSU | 0.8569 | 9-3
+12 | Boise St | 0.8537 | 10-2
+13 | Washington St | 0.8534 | 10-2
+14 | Appalachian St | 0.8466 | 9-2
+15 | Cincinnati | 0.8440 | 10-2
+16 | Kentucky | 0.8431 | 9-3
+17 | Fresno St | 0.8420 | 10-2
+18 | Syracuse | 0.8325 | 9-3
+19 | Texas A&M | 0.8316 | 8-4
+20 | Washington | 0.8309 | 9-3
+21 | Utah | 0.8305 | 9-3
+22 | Mississippi St | 0.8211 | 8-4
+23 | Penn State | 0.8192 | 9-3
+24 | Missouri | 0.8181 | 8-4
+25 | Utah St | 0.8174 | 10-2
 
 #### Observations and Notes
 
-* Notable Absenses: Washington (#28), Boston College (#29), Texas (#33)
+* Notable Absenses: West Virginia (#27), Texas (#30)
 
-* Not much else to report this week.  Biggest thing I noticed with the poll is a lot of 70%+ win percentage G5 teams occupying the 11-25 area of the poll (9/15 spots) rather than the above average P5 teams (like you would see in the AP Poll).  I have the poll valuing winning fairly high, so this makes sense.  If I lower the effect of win percentage to about half of what it is, then the top of the poll (top 10) remains largely unchanged, but the rest (11-25) fills out with mainly P5 teams (12/15) with about a 60% win percentage and strong schedule, which makes sense since SoS plays an important part in the poll.  The effect of win percentage should probably be tweaked just a bit to balance this out (so it doesn't swing too far in either direction).
+* My poll really hates Texas.
+
+* The drop-off from #5 to #6 is quite noticeable.  If I had to guess, my top four following the conference championship games (assuming the higher ranked team wins) will be Clemson, Alabama, Notre Dame, and Central Florida.  Oklahoma's defense and Ohio State's strength of schedule are pulling them down and I'm not sure if the extra win will give either team enough of a boost.
 
 ### TODO List
 
-1. Introduction of head-to-head results?
+1. ~~Introduction of head-to-head results?~~ I think I might scrap this part.
 
 2. Clean up the code (many blocks which can be refactored into cleaner functions and some ugly code exist (like in the renaming function))
 
-3. Figure out goal of this poll
+3. ~~Figure out goal of this poll~~ I'm thinking the "goal" of the poll is to use it to predict game match-ups.  Use the poll to generate confidence scores for specific games in the coming week (which means finding a place to download full season schedules, including games not yet played, rather than grab from that .html file).  Maybe use it to predict how teams will finish the season... not entirely sure how to go about doing this though.  These are plans for the FUTURE though, nothing to worry about now.
