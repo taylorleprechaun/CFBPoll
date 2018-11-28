@@ -26,7 +26,7 @@ import org.apache.poi.xssf.usermodel.*;
 //TODO: clean up reused blocks into their own functions
 
 public class Poll {
-	public static String date = "20181104";
+	public static String date = "20181125";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
