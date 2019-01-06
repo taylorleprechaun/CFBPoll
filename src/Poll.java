@@ -26,7 +26,8 @@ import org.apache.poi.xssf.usermodel.*;
 //TODO: clean up reused blocks into their own functions
 
 public class Poll {
-	public static String date = "20181125";
+	public static String date = "20181202";
+	//public static String date = "20190106";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
@@ -49,6 +50,17 @@ public class Poll {
 			printTeamData(teams, "T25");
 		} else if (args[0].equals("Reddit")) {
 			printReddit(teams);
+
+		//Predict scores between two teams
+		} else if (args[0].equals("vs")) {
+			Predictor predictor = new Predictor(teams.get("Florida"), teams.get("Michigan"));
+			predictor.calcPrediction();
+			System.out.println("------------------------------");
+			predictor.setTeams(teams.get("Texas"), teams.get("Georgia"));
+			predictor.calcPrediction();
+			System.out.println("------------------------------");
+			predictor.setTeams(teams.get("Alabama"), teams.get("Oklahoma"));
+			predictor.calcPrediction();
 		}
 
 		//Print info for an individual team
