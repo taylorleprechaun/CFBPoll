@@ -12,52 +12,54 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 * Minor tweaks to formula
 
+* New code block in main method for predicting games!  This doesn't work and is pretty bad!  I made a really basic formula using some of the stats I grab from sports-reference and tried to predict some scores.  It either predicts very close matchups or ridiculous blowouts (I'm talking 80-22 kinds of blowouts).  This is something I am definitely going to work on in the offseason
+
 ### Rankings
 
-**Week 14 Rankings**
+**Week 16 (Pre NCG/Post Bowl) Rankings**
 
-(As of 11/27/2018)
+(As of 01/06/2019)
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Clemson | 1.0000 | 12-0
-2 | Alabama | 0.9847 | 12-0
-3 | Notre Dame | 0.9737 | 12-0
-4 | Georgia | 0.9645 | 11-1
-5 | Central Florida | 0.9495 | 11-0
-6 | Oklahoma | 0.9109 | 11-1
-7 | Ohio State | 0.8920 | 11-1
-8 | Michigan | 0.8884 | 10-2
-9 | Florida | 0.8663 | 9-3
-10 | Army | 0.8661 | 9-2
-11 | LSU | 0.8569 | 9-3
-12 | Boise St | 0.8537 | 10-2
-13 | Washington St | 0.8534 | 10-2
-14 | Appalachian St | 0.8466 | 9-2
-15 | Cincinnati | 0.8440 | 10-2
-16 | Kentucky | 0.8431 | 9-3
-17 | Fresno St | 0.8420 | 10-2
-18 | Syracuse | 0.8325 | 9-3
-19 | Texas A&M | 0.8316 | 8-4
-20 | Washington | 0.8309 | 9-3
-21 | Utah | 0.8305 | 9-3
-22 | Mississippi St | 0.8211 | 8-4
-23 | Penn State | 0.8192 | 9-3
-24 | Missouri | 0.8181 | 8-4
-25 | Utah St | 0.8174 | 10-2
+1 | Clemson | 1.0000 | 14-0
+2 | Alabama | 0.9864 | 14-0
+3 | Notre Dame | 0.9300 | 12-1
+4 | Ohio State | 0.8984 | 13-1
+5 | Oklahoma | 0.8955 | 12-2
+6 | Georgia | 0.8916 | 11-3
+7 | Central Florida | 0.8903 | 12-1
+8 | LSU | 0.8726 | 10-3
+9 | Florida | 0.8664 | 10-3
+10 | Army | 0.8584 | 11-2
+11 | Fresno St | 0.8534 | 12-2
+12 | Appalachian St | 0.8519 | 11-2
+13 | Washington St | 0.8514 | 11-2
+14 | Texas A&M | 0.8494 | 9-4
+15 | Michigan | 0.8458 | 10-3
+16 | Kentucky | 0.8385 | 10-3
+17 | Syracuse | 0.8347 | 10-3
+18 | Cincinnati | 0.8324 | 11-2
+19 | Boise St | 0.8289 | 10-3
+20 | Washington | 0.8204 | 10-4
+21 | Utah St | 0.8204 | 11-2
+22 | Georgia Southern | 0.8093 | 10-3
+23 | Troy | 0.8087 | 10-3
+24 | Texas | 0.8028 | 10-4
+25 | Stanford | 0.7993 | 9-4
 
 #### Observations and Notes
 
-* Notable Absenses: West Virginia (#27), Texas (#30)
+* Texas is BACK!!!  No longer a notable absence!
 
-* My poll really hates Texas.
+* My poll still views Notre Dame as being a step above OSU, Oklahoma, and UGA, even after losing to Clemson in the CFP.
 
-* The drop-off from #5 to #6 is quite noticeable.  If I had to guess, my top four following the conference championship games (assuming the higher ranked team wins) will be Clemson, Alabama, Notre Dame, and Central Florida.  Oklahoma's defense and Ohio State's strength of schedule are pulling them down and I'm not sure if the extra win will give either team enough of a boost.
+* Something I immediately noticed was LSU above UF (given I am a UF alum).  It seems that bowl season pushed their SoS up enough to put them just ahead of UF (they are only 6% apart).  Maybe head-to-head needs to get factored in for adjacent teams... not sure how I'll adjust that.  A project for this long offseason.
 
 ### TODO List
 
-1. ~~Introduction of head-to-head results?~~ I think I might scrap this part.
+1. ~~Introduction of head-to-head results?~~ ~~I think I might scrap this part.~~ Maybe head-to-head could be used if neighboring teams are close enough and have played... not sure about this.
 
-2. Clean up the code (many blocks which can be refactored into cleaner functions and some ugly code exist (like in the renaming function))
+2. Score predictor!  I wrote about it in the recent changes section.  I tried to predict scores between teams (knowing the outcome and using data from before that game was played) and the results were wild.
 
-3. ~~Figure out goal of this poll~~ I'm thinking the "goal" of the poll is to use it to predict game match-ups.  Use the poll to generate confidence scores for specific games in the coming week (which means finding a place to download full season schedules, including games not yet played, rather than grab from that .html file).  Maybe use it to predict how teams will finish the season... not entirely sure how to go about doing this though.  These are plans for the FUTURE though, nothing to worry about now.
+3. Clean up the code (many blocks which can be refactored into cleaner functions and some ugly code exist (like in the renaming function))
