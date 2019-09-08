@@ -10,56 +10,52 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 ### Recent changes
 
-* Minor tweaks to formula
-
-* New code block in main method for predicting games!  This doesn't work and is pretty bad!  I made a really basic formula using some of the stats I grab from sports-reference and tried to predict some scores.  It either predicts very close matchups or ridiculous blowouts (I'm talking 80-22 kinds of blowouts).  This is something I am definitely going to work on in the offseason
+* Some changes to the structure of the code and ability to handle teams who have only played FCS games through Week 2 (they get ranked in last place)
 
 ### Rankings
 
-**Week 16 (Pre NCG/Post Bowl) Rankings**
+**Week 2 Rankings**
 
-(As of 01/06/2019)
+(As of 09/08/2019)
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Clemson | 1.0000 | 14-0
-2 | Alabama | 0.9864 | 14-0
-3 | Notre Dame | 0.9300 | 12-1
-4 | Ohio State | 0.8984 | 13-1
-5 | Oklahoma | 0.8955 | 12-2
-6 | Georgia | 0.8916 | 11-3
-7 | Central Florida | 0.8903 | 12-1
-8 | LSU | 0.8726 | 10-3
-9 | Florida | 0.8664 | 10-3
-10 | Army | 0.8584 | 11-2
-11 | Fresno St | 0.8534 | 12-2
-12 | Appalachian St | 0.8519 | 11-2
-13 | Washington St | 0.8514 | 11-2
-14 | Texas A&M | 0.8494 | 9-4
-15 | Michigan | 0.8458 | 10-3
-16 | Kentucky | 0.8385 | 10-3
-17 | Syracuse | 0.8347 | 10-3
-18 | Cincinnati | 0.8324 | 11-2
-19 | Boise St | 0.8289 | 10-3
-20 | Washington | 0.8204 | 10-4
-21 | Utah St | 0.8204 | 11-2
-22 | Georgia Southern | 0.8093 | 10-3
-23 | Troy | 0.8087 | 10-3
-24 | Texas | 0.8028 | 10-4
-25 | Stanford | 0.7993 | 9-4
+1 | North Carolina St | 1.0000 | 2-0
+2 | Kansas St | 0.9983 | 2-0
+3 | Penn State | 0.9982 | 2-0
+4 | Oklahoma | 0.9963 | 2-0
+5 | Baylor | 0.9960 | 2-0
+6 | Arizona St | 0.9906 | 2-0
+7 | Appalachian St | 0.9884 | 2-0
+8 | Indiana | 0.9883 | 2-0
+9 | Texas Tech | 0.9882 | 2-0
+10 | California | 0.9762 | 2-0
+11 | LSU | 0.9568 | 2-0
+12 | Michigan St | 0.9557 | 2-0
+13 | Colorado | 0.9508 | 2-0
+14 | SMU | 0.9440 | 2-0
+15 | Boise St | 0.9399 | 2-0
+16 | Boston College | 0.9379 | 2-0
+17 | Virginia | 0.9263 | 2-0
+18 | Memphis | 0.9232 | 2-0
+19 | Iowa | 0.9177 | 2-0
+20 | Mississippi St | 0.9143 | 2-0
+21 | Utah | 0.9135 | 2-0
+22 | Michigan | 0.9038 | 2-0
+23 | Alabama | 0.8887 | 2-0
+24 | Maryland | 0.8866 | 2-0
+25 | Auburn | 0.8857 | 2-0
 
 #### Observations and Notes
 
-* Texas is BACK!!!  No longer a notable absence!
+* Okay, so obviously NC State *isn't* the best team in the country, but we'll just roll with it until we get some more data points to clean this up.
 
-* My poll still views Notre Dame as being a step above OSU, Oklahoma, and UGA, even after losing to Clemson in the CFP.
-
-* Something I immediately noticed was LSU above UF (given I am a UF alum).  It seems that bowl season pushed their SoS up enough to put them just ahead of UF (they are only 6% apart).  Maybe head-to-head needs to get factored in for adjacent teams... not sure how I'll adjust that.  A project for this long offseason.
+* Notable teams missing from the Top 25: #26 Clemson, #55 Ohio State, #68 Florida, #70 Texas, #79 Georgia
 
 ### TODO List
 
-1. ~~Introduction of head-to-head results?~~ ~~I think I might scrap this part.~~ Maybe head-to-head could be used if neighboring teams are close enough and have played... not sure about this.
+1. Score predictor <-- No real progress made here.  Fiddled with it during the offseason but never got anything useful.  Maybe some day...
 
-2. Score predictor!  I wrote about it in the recent changes section.  I tried to predict scores between teams (knowing the outcome and using data from before that game was played) and the results were wild.
+2. Clean up the code <-- Some progress made here!
 
-3. Clean up the code (many blocks which can be refactored into cleaner functions and some ugly code exist (like in the renaming function))
+Possible use of head-to-head results has been scrapped

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+//This class is the Stats object which contains all of a team's stats
 public class Stats {
     private double games, points;
     private double completions, passAttempts, percent, passYards, passTD;

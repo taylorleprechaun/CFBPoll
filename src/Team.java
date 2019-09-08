@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+//This class is the Team object which contains all of a team's information
 public class Team {
 	private String name;
 	private int wins, losses, games;
