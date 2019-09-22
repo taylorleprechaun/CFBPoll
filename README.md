@@ -14,43 +14,43 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 ### Rankings
 
-**Week 3 Rankings**
+**Week 4 Rankings**
 
-(As of 09/15/2019)
+(As of 09/22/2019)
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Notre Dame | 1.0000 | 2-0
-2 | Air Force | 0.9943 | 2-0
-3 | Auburn | 0.9878 | 3-0
-4 | Temple | 0.9850 | 2-0
-5 | California | 0.9797 | 3-0
-6 | Memphis | 0.9671 | 3-0
-7 | Kansas St | 0.9617 | 3-0
-8 | Arizona St | 0.9565 | 3-0
-9 | Florida | 0.9517 | 3-0
-10 | Utah | 0.9479 | 3-0
-11 | Boise St | 0.9477 | 3-0
-12 | Ohio State | 0.9476 | 3-0
-13 | LSU | 0.9458 | 3-0
-14 | Appalachian St | 0.9444 | 2-0
-15 | Iowa | 0.9111 | 3-0
-16 | Alabama | 0.9070 | 3-0
-17 | Wisconsin | 0.9025 | 2-0
-18 | Clemson | 0.8923 | 3-0
-19 | Wyoming | 0.8900 | 3-0
-20 | Michigan | 0.8896 | 2-0
-21 | Oregon | 0.8892 | 2-1
-22 | Baylor | 0.8860 | 2-0
-23 | Navy | 0.8812 | 2-0
-24 | Washington | 0.8808 | 2-1
-25 | Central Florida | 0.8777 | 3-0
+1 | Boise St | 1.0000 | 4-0
+2 | California | 0.9953 | 4-0
+3 | Auburn | 0.9886 | 4-0
+4 | Navy | 0.9824 | 2-0
+5 | Ohio State | 0.9601 | 4-0
+6 | Penn State | 0.9548 | 3-0
+7 | Kansas St | 0.9482 | 3-0
+8 | SMU | 0.9376 | 4-0
+9 | Wisconsin | 0.9369 | 3-0
+10 | Appalachian St | 0.9361 | 3-0
+11 | Virginia | 0.9317 | 4-0
+12 | Clemson | 0.9313 | 4-0
+13 | Georgia | 0.9250 | 4-0
+14 | Memphis | 0.9249 | 3-0
+15 | Air Force | 0.9230 | 2-1
+16 | LSU | 0.9165 | 4-0
+17 | Washington | 0.9143 | 3-1
+18 | Minnesota | 0.9110 | 3-0
+19 | Florida | 0.9091 | 4-0
+20 | Iowa | 0.9021 | 3-0
+21 | Wake Forest | 0.9004 | 4-0
+22 | Alabama | 0.8985 | 4-0
+23 | Mississippi St | 0.8876 | 3-1
+24 | Oregon | 0.8828 | 3-1
+25 | Arizona St | 0.8692 | 3-1
 
 #### Observations and Notes
 
-* More data has very much helped the poll.  Yay!  Many of the teams you would expect to be in the Top 25 are now there but the order is still funky.
+* More data still helping but also still a bit funky rankings.  There are a lot of big changes week to week so far (i.e. Georgia going from #52 to #13 and Notre Dame dropping from #1 to #37 as a result of their game, Navy doing nothing and going from #23 to #4, etc.).  I have no doubt this will smooth out by week 6-7, as my last season's rankings didn't have as many large changes week in and week out.
 
-* Notable teams missing: #31 Penn State, #37 Oklahoma, #52 Georgia, #64 Texas 
+* Notable teams missing:  #27 Oklahoma, #30 Texas, #37 Notre Dame
 
 ### TODO List
 
