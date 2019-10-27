@@ -15,7 +15,7 @@ import java.util.Map;
  */
 
 public class Poll {
-	public static String date = "20191020";
+	public static String date = "20191027";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
@@ -41,13 +41,16 @@ public class Poll {
 
 		//Predict scores between two teams
 		} else if (args[0].equals("vs")) {
-			Predictor predictor = new Predictor(teams.get("Florida"), teams.get("Michigan"));
+			Predictor predictor = new Predictor(teams.get("Florida"), teams.get("South Carolina"));
 			predictor.calcPrediction();
 			System.out.println("------------------------------");
-			predictor.setTeams(teams.get("Texas"), teams.get("Georgia"));
+			predictor.setTeams(teams.get("Michigan"), teams.get("Penn State"));
 			predictor.calcPrediction();
 			System.out.println("------------------------------");
-			predictor.setTeams(teams.get("Alabama"), teams.get("Clemson"));
+			predictor.setTeams(teams.get("Wisconsin"), teams.get("Illinois"));
+			predictor.calcPrediction();
+			System.out.println("------------------------------");
+			predictor.setTeams(teams.get("Northwestern"), teams.get("Ohio State"));
 			predictor.calcPrediction();
 		}
 
