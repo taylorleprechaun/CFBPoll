@@ -15,7 +15,7 @@ import java.util.Map;
  */
 
 public class Poll {
-	public static String date = "20191103";
+	public static String date = "20191110";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
