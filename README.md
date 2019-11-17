@@ -14,41 +14,41 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 ### Rankings
 
-**Week 12 Rankings**
+**Week 13 Rankings**
 
-(As of 11/10/2019)
+(As of 11/17/2019)
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | LSU | 1.0000 | 9-0
-2 | Ohio State | 0.9724 | 9-0
-3 | Clemson | 0.9318 | 10-0
-4 | Minnesota | 0.9226 | 9-0
-5 | Penn State | 0.9216 | 8-1
-6 | Baylor | 0.9117 | 9-0
-7 | Oregon | 0.9051 | 8-1
-8 | Georgia | 0.8953 | 8-1
-9 | Boise St | 0.8887 | 8-1
-10 | Memphis | 0.8868 | 8-1
-11 | Utah | 0.8837 | 8-1
-12 | Florida | 0.8807 | 8-2
-13 | Cincinnati | 0.8753 | 8-1
-14 | Navy | 0.8724 | 7-1
-15 | Alabama | 0.8694 | 8-1
-16 | Oklahoma | 0.8666 | 8-1
-17 | SMU | 0.8664 | 9-1
-18 | Auburn | 0.8590 | 7-2
-19 | Appalachian St | 0.8550 | 8-1
-20 | Notre Dame | 0.8523 | 7-2
-21 | Wisconsin | 0.8349 | 7-2
-22 | Michigan | 0.8339 | 7-2
-23 | Air Force | 0.8322 | 7-2
-24 | Louisiana-Lafayette | 0.8240 | 7-2
-25 | Wake Forest | 0.8038 | 7-2
+1 | LSU | 1.0000 | 10-0
+2 | Ohio State | 0.9778 | 10-0
+3 | Clemson | 0.9655 | 11-0
+4 | Penn State | 0.9485 | 9-1
+5 | Georgia | 0.9317 | 9-1
+6 | Oregon | 0.9178 | 9-1
+7 | Utah | 0.9137 | 9-1
+8 | Oklahoma | 0.9024 | 9-1
+9 | Baylor | 0.9021 | 9-1
+10 | Boise St | 0.9018 | 9-1
+11 | Minnesota | 0.8996 | 9-1
+12 | Florida | 0.8992 | 9-2
+13 | Cincinnati | 0.8969 | 9-1
+14 | Alabama | 0.8957 | 9-1
+15 | Notre Dame | 0.8945 | 8-2
+16 | Memphis | 0.8926 | 9-1
+17 | SMU | 0.8851 | 9-1
+18 | Appalachian St | 0.8805 | 9-1
+19 | Michigan | 0.8682 | 8-2
+20 | Wisconsin | 0.8648 | 8-2
+21 | Air Force | 0.8551 | 8-2
+22 | Navy | 0.8499 | 7-2
+23 | Auburn | 0.8487 | 7-3
+24 | Louisiana-Lafayette | 0.8282 | 8-2
+25 | Iowa | 0.8200 | 7-3
 
 #### Observations and Notes
 
-* Notable teams missing: #27 Texas, #38 Indiana
+* Notable teams missing: #28 Oklahoma State.  Not really anyone else of note is missing
 
 ### TODO List
 
