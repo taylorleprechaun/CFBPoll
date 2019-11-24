@@ -51,8 +51,8 @@ public class PollPrinter {
 		}
 
 		//Header to print out select stats
-		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\t\tW\tL\tPct\t\tSoS\t\tWeighted\tAvgMoV\tYF\t\tYA\t\tTO Margin");
-		System.out.println("=====================================================================================================================");
+		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\t\tW\tL\tPct\t\tSoS\t\tWeighted\tAvgMoV\tYF\t\tYA\t\tTO Margin\tYPPO\tYPPD");
+		System.out.println("====================================================================================================================================");
 		for (int ii = 0; ii < count; ii++) {
 			Team currTeam = teams.get(names.get(ii));
 
@@ -101,6 +101,10 @@ public class PollPrinter {
 			System.out.print("\t" + dec1.format(currTeam.getDefenseStats().getTotalYards()));
 			//TO Margin
 			System.out.print("\t" + dec2.format(currTeam.getDefenseStats().getTotalTO()-currTeam.getOffenseStats().getTotalTO()));
+			//YPPO
+			System.out.print("\t\t" + dec1.format(currTeam.getOffenseStats().getYardsPerPlay()));
+			//YPPD
+			System.out.print("\t\t" + dec1.format(currTeam.getDefenseStats().getYardsPerPlay()));
 			//End line
 			System.out.println();
 		}

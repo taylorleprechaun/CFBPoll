@@ -14,41 +14,52 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 ### Rankings
 
-**Week 13 Rankings**
+**Week 14 Rankings**
 
-(As of 11/17/2019)
+(As of 11/24/2019)
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | LSU | 1.0000 | 10-0
-2 | Ohio State | 0.9778 | 10-0
-3 | Clemson | 0.9655 | 11-0
-4 | Penn State | 0.9485 | 9-1
-5 | Georgia | 0.9317 | 9-1
-6 | Oregon | 0.9178 | 9-1
-7 | Utah | 0.9137 | 9-1
-8 | Oklahoma | 0.9024 | 9-1
-9 | Baylor | 0.9021 | 9-1
-10 | Boise St | 0.9018 | 9-1
-11 | Minnesota | 0.8996 | 9-1
-12 | Florida | 0.8992 | 9-2
-13 | Cincinnati | 0.8969 | 9-1
-14 | Alabama | 0.8957 | 9-1
-15 | Notre Dame | 0.8945 | 8-2
-16 | Memphis | 0.8926 | 9-1
-17 | SMU | 0.8851 | 9-1
-18 | Appalachian St | 0.8805 | 9-1
-19 | Michigan | 0.8682 | 8-2
-20 | Wisconsin | 0.8648 | 8-2
-21 | Air Force | 0.8551 | 8-2
-22 | Navy | 0.8499 | 7-2
-23 | Auburn | 0.8487 | 7-3
-24 | Louisiana-Lafayette | 0.8282 | 8-2
-25 | Iowa | 0.8200 | 7-3
+1 | Ohio State | 1.0000 | 11-0
+2 | LSU | 0.9914 | 11-0
+3 | Clemson | 0.9740 | 11-0
+4 | Georgia | 0.9586 | 10-1
+5 | Penn State | 0.9271 | 9-2
+6 | Utah | 0.9174 | 10-1
+7 | Baylor | 0.9169 | 10-1
+8 | Notre Dame | 0.9161 | 9-2
+9 | Florida | 0.9143 | 9-2
+10 | Alabama | 0.9143 | 10-1
+11 | Cincinnati | 0.9124 | 10-1
+12 | Oklahoma | 0.9081 | 10-1
+13 | Boise St | 0.9016 | 10-1
+14 | Memphis | 0.8963 | 10-1
+15 | Appalachian St | 0.8903 | 10-1
+16 | Michigan | 0.8863 | 9-2
+17 | Minnesota | 0.8831 | 10-1
+18 | Wisconsin | 0.8792 | 9-2
+19 | Oregon | 0.8770 | 9-2
+20 | Navy | 0.8737 | 8-2
+21 | Auburn | 0.8731 | 8-3
+22 | SMU | 0.8538 | 9-2
+23 | Air Force | 0.8502 | 8-2
+24 | Louisiana-Lafayette | 0.8434 | 9-2
+25 | Iowa | 0.8392 | 8-3
 
 #### Observations and Notes
 
-* Notable teams missing: #28 Oklahoma State.  Not really anyone else of note is missing
+* There's some interesting stuff going on in the top 10 and 1-loss Power 5 teams that I want to take a deeper look at:
+    * Ohio State has taken #1 back from LSU thanks to their defense and a strength of schedule increase (and LSU decrease).  Before this week LSU had a huge advantage in strength of schedule which helped them overcome their defense.  Now their strengths of schedule are about even, giving Ohio State the overall advantage.
+    * Teams ranked 5-11 are all within 1.5% of each other, about the same as the gap between LSU and Clemson.  This is mainly due to strength of schedule as well.
+	    * Penn State vs Utah: By my rankings, Penn State's defense is way worse than Utah's and their offenses are about the same.  Penn State, however, has played a massively harder schedule (about 60% vs 52% weighted opponent win percentage).  This gives Penn State nearly a full percentage advantage.
+		* Utah vs Baylor: This one all comes down to defense and results.  Similar offenses and SoS, but Utah's defense is waaaaay better and Baylor's margins of victory are a lot closer (and in case anyone is worried or anything, I cap margin of victory in my ranking formula).
+		* Baylor vs Notre Dame: Notre Dame has a much higher strength of schedule but their 2 losses drag them down too much as the rest of their ranking is very similar.
+		* Notre Dame vs Florida: These two have similar strengths of schedule, victory margins, and offensive/defensive states.  Notre Dame's big advantage comes from turnover margin and slightly better stats.
+		* Florida vs Alabama: These two are not actually tied at 91.43%.  The percent is weighted against the highest team.  They have 37.311 and 37.309 points given to them by the poll.  Alabama's offense absolutely destroys Florida's, but they also have the worst strength of schedule in the top 10 which offsets that in Florida's favor even with their worse record.
+		* Alabama vs Cincinnati: This one comes down to Bama's offense vs Cincy's.
+	* Oklahoma: Great at offense, decent strength of schedule, but poor in most other things I use to rank
+	* Minnesota: Atrocious strength of schedule.  They have the 2nd worst of the top 50.  Combine that with an average offense and defense and it shows why they're ranked so low by my poll.
+* Notable teams missing: #31 Oklahoma State, #33 USC.  Not really anyone of note that's missing though (including these two)
 
 ### TODO List
 
