@@ -58,7 +58,7 @@ LSU | 32 | 0 | Always In
 Clemson | 28 | 4 | Out with loss and Georgia and Oklahoma both win (4)
 Georgia | 16 | 16 | In with win, out with loss (16)
 Oklahoma | 12 | 20 | In with win and Clemson loss (8).  In with win and Clemson win and Georgia loss (4)
-Utah | 4 | 28 | In with win and Georgia and Baylor both lose (4)
+Utah | 4 | 28 | In with win and Georgia and Oklahoma both lose (4)
 Baylor | 4 | 28 | In with win and Georgia and Utah both lose (4)
 
 
