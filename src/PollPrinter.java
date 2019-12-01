@@ -50,11 +50,16 @@ public class PollPrinter {
 			count = 25;
 		}
 
+		double averageSoS = 0, averageWeightedSoS = 0;
+
 		//Header to print out select stats
 		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\t\tW\tL\tPct\t\tSoS\t\tWeighted\tAvgMoV\tYF\t\tYA\t\tTO Margin\tYPPO\tYPPD");
 		System.out.println("====================================================================================================================================");
 		for (int ii = 0; ii < count; ii++) {
 			Team currTeam = teams.get(names.get(ii));
+
+			averageWeightedSoS += currTeam.getWeightedSoS();
+			averageSoS += currTeam.getSoS();
 
 			//Number
 			System.out.print((ii+1) + ":\t");
@@ -108,6 +113,11 @@ public class PollPrinter {
 			//End line
 			System.out.println();
 		}
+
+		DecimalFormat dec4 = new DecimalFormat("#0.0000");
+		System.out.println("\n\nMisc info:");
+		System.out.println("Average SoS: " + dec4.format(averageSoS/129));
+		System.out.println("Average Weighted SoS: " + dec4.format(averageWeightedSoS/129));
 	}
 
 	//Print in Reddit table format for copy paste
