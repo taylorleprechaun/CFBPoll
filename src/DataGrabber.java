@@ -13,12 +13,16 @@ public class DataGrabber {
 	public static Map generateTeams(Map<String, Team> teams) {
 		try {
 			//Read from file
-			BufferedReader teamReader = new BufferedReader(new FileReader(".\\rsc\\FBS.txt"));
+			BufferedReader teamReader = new BufferedReader(new FileReader(".\\rsc\\FBS-Conf.txt"));
 			String str;
 			while ((str = teamReader.readLine()) != null) {
 				//Create team using the team name and add to map
-				Team newTeam = new Team(str);
-				teams.put(str, newTeam);
+				String[] info = str.split("\\|");
+				//0 is team name, 1 is conference, 2 is division
+//				System.out.println(info[0] + "-" + info[1] + "-" + info[2]);
+				Team newTeam = new Team(info[0]);
+				teams.put(info[0], newTeam);
+				newTeam.setConference(info[1], info[2]);
 			}
 
 			teamReader.close();

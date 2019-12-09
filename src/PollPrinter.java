@@ -45,7 +45,7 @@ public class PollPrinter {
 		//Print full list or top 25
 		int count = 0;
 		if (type.equals("Full")) {
-			count = names.size()-1;
+			count = names.size();
 		} else if (type.equals("T25")) {
 			count = 25;
 		}
@@ -53,8 +53,8 @@ public class PollPrinter {
 		double averageSoS = 0, averageWeightedSoS = 0;
 
 		//Header to print out select stats
-		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\t\tW\tL\tPct\t\tSoS\t\tWeighted\tAvgMoV\tYF\t\tYA\t\tTO Margin\tYPPO\tYPPD");
-		System.out.println("====================================================================================================================================");
+		System.out.println("Number\tTeam\t\t\t\tScore\tPoints\t\tW\tL\tPct\t\tSoS\t\tWeighted\tConf\t\tDiv\t\t\tAvgMoV\tYF\t\tYA\t\tTO Margin\tYPPO\tYPPD");
+		System.out.println("============================================================================================================================================================");
 		for (int ii = 0; ii < count; ii++) {
 			Team currTeam = teams.get(names.get(ii));
 
@@ -98,8 +98,24 @@ public class PollPrinter {
 			System.out.print("\t" + dec4.format(currTeam.getPCT()));
 			//SoS and SoV
 			System.out.print("\t" + dec4.format(currTeam.getSoS()) + "\t" + dec4.format(currTeam.getWeightedSoS()));
+			//Conference and Division - Need to get spacing right
+			String conf = currTeam.getConference(), div = currTeam.getDivision();
+			System.out.print("\t\t" + conf);
+			if (conf.length() < 4) {
+				System.out.print("\t\t\t" + div);
+			} else if (conf.length() < 7 ) {
+				System.out.print("\t\t" + div);
+			} else {
+				System.out.print("\t" + div);
+			}
+			if (div.equals(" ")) {
+				System.out.print("\t");
+			}
+			if (div.length() < 8) {
+				System.out.print("\t");
+			}
 			//MoV
-			System.out.print("\t\t" + dec2.format(currTeam.getOffenseStats().getPoints() - currTeam.getDefenseStats().getPoints()));
+			System.out.print("\t" + dec2.format(currTeam.getOffenseStats().getPoints() - currTeam.getDefenseStats().getPoints()));
 			//YF
 			System.out.print("\t" + dec1.format(currTeam.getOffenseStats().getTotalYards()));
 			//YA
@@ -175,7 +191,7 @@ public class PollPrinter {
 	}
 
 	//Print info for one team
-	private static void printTeam(Map<String, Team> teams, String teamName) {
+	public static void printTeam(Map<String, Team> teams, String teamName) {
 		Team team = teams.get(teamName);
 		System.out.println(teamName + "\n==============");
 		for (int ii = 0; ii < team.getOpponents().size(); ii++) {

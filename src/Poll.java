@@ -15,7 +15,7 @@ import java.util.Map;
  */
 
 public class Poll {
-	public static String date = "20191201";
+	public static String date = "20191208";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
@@ -44,18 +44,10 @@ public class Poll {
 			Predictor predictor = new Predictor(teams.get("Florida"), teams.get("South Carolina"));
 			predictor.calcPrediction();
 			System.out.println("------------------------------");
-			predictor.setTeams(teams.get("Michigan"), teams.get("Penn State"));
-			predictor.calcPrediction();
-			System.out.println("------------------------------");
-			predictor.setTeams(teams.get("Wisconsin"), teams.get("Illinois"));
-			predictor.calcPrediction();
-			System.out.println("------------------------------");
-			predictor.setTeams(teams.get("Northwestern"), teams.get("Ohio State"));
-			predictor.calcPrediction();
 		}
 
 		//Print info for an individual team
-//		printTeam(teams, "Florida");
+//		PollPrinter.printTeam(teams, "Florida");
 	}
 
 	//Calculate regular and BCS-like SoS for each team

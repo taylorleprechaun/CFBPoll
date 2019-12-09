@@ -2,9 +2,8 @@ import java.util.ArrayList;
 
 //This class is the Team object which contains all of a team's information
 public class Team {
-	private String name;
+	private String name, conference, division;
 	private int wins, losses, games;
-	private double YF, YA;
 	private double SoS, oppSoS, PCT;
 	private ArrayList<String> opponents;
 	private ArrayList<String> results;
@@ -14,7 +13,6 @@ public class Team {
 
 	public Team(String name) {
 		wins = 0; losses = 0; games = 0;
-		YF = 0; YA = 0;
 		this.name = name;
 		this.opponents = new ArrayList<>();
 		this.results = new ArrayList<>();
@@ -22,7 +20,7 @@ public class Team {
 
 	//Calculates the teams rank in the system
 	public double calculateRank() {
-		this.teamRank = new Rank(PCT, offenseStats, defenseStats, SoS, oppSoS);
+		this.teamRank = new Rank(PCT, offenseStats, defenseStats, SoS, oppSoS, this);
 		return teamRank.calculateRank();
 	}
 
@@ -90,4 +88,15 @@ public class Team {
 	public Stats getDefenseStats() {
 		return defenseStats;
 	}
+	public void setConference(String conference, String division) {
+		this.conference = conference;
+		this.division = division;
+	}
+	public String getConference() {
+		return conference;
+	}
+	public String getDivision() {
+		return  division;
+	}
+
 }

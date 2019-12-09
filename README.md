@@ -10,69 +10,61 @@ Made for fun.  Not really sure what I plan to do with this once I get it refined
 
 ### Recent changes
 
-* None
+* Added conferences information for each team.  Not used in the poll in any way, it's just there now.
 
 ### Rankings
 
-**Week 15 Rankings**
+**Week 16 Rankings**
 
-(As of 12/01/2019)
+(As of 12/08/2019)
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Ohio State | 1.0000 | 12-0
-2 | LSU | 0.9870 | 12-0
-3 | Clemson | 0.9560 | 12-0
-4 | Georgia | 0.9402 | 11-1
-5 | Florida | 0.9129 | 10-2
-6 | Boise St | 0.9105 | 11-1
-7 | Memphis | 0.9092 | 11-1
-8 | Utah | 0.9078 | 11-1
-9 | Oklahoma | 0.9077 | 11-1
-10 | Baylor | 0.9027 | 11-1
-11 | Penn State | 0.9009 | 10-2
-12 | Notre Dame | 0.8987 | 10-2
-13 | Wisconsin | 0.8913 | 10-2
-14 | Appalachian St | 0.8870 | 11-1
-15 | Auburn | 0.8842 | 9-3
-16 | Oregon | 0.8735 | 10-2
-17 | Alabama | 0.8735 | 10-2
-18 | Cincinnati | 0.8735 | 10-2
-19 | Navy | 0.8716 | 9-2
-20 | Air Force | 0.8590 | 10-2
-21 | Michigan | 0.8559 | 9-3
-22 | SMU | 0.8486 | 10-2
-23 | Minnesota | 0.8470 | 10-2
-24 | Louisiana-Lafayette | 0.8469 | 10-2
-25 | Iowa | 0.8277 | 9-3
+1 | Ohio State | 1.0000 | 13-0
+2 | LSU | 0.9933 | 13-0
+3 | Clemson | 0.9584 | 13-0
+4 | Memphis | 0.9164 | 12-1
+5 | Oklahoma | 0.9159 | 12-1
+6 | Boise St | 0.9124 | 12-1
+7 | Georgia | 0.9108 | 11-2
+8 | Florida | 0.9056 | 10-2
+9 | Appalachian St | 0.8958 | 12-1
+10 | Penn State | 0.8953 | 10-2
+11 | Notre Dame | 0.8889 | 10-2
+12 | Oregon | 0.8869 | 11-2
+13 | Auburn | 0.8797 | 9-3
+14 | Baylor | 0.8770 | 11-2
+15 | Utah | 0.8743 | 11-2
+16 | Alabama | 0.8685 | 10-2
+17 | Wisconsin | 0.8664 | 10-3
+18 | Navy | 0.8662 | 9-2
+19 | Air Force | 0.8529 | 10-2
+20 | Cincinnati | 0.8508 | 10-3
+21 | Michigan | 0.8493 | 9-3
+22 | SMU | 0.8432 | 10-2
+23 | Minnesota | 0.8389 | 10-2
+24 | Florida Atlantic | 0.8369 | 10-3
+25 | Louisiana-Lafayette | 0.8240 | 10-3
 
 #### Observations and Notes
 
-* Notable teams missing: #27 Virginia
-* Here we are before championship weekend with a lot of teams on the outside looking in.  Instead of doing write-ups this week for what separates them, I'm going to run scenarios for the conference championship games to see who gets in to the Playoff under what scenarios.  Any scenarios I ran involving Memphis' or Boise State's game results messed up the scenarios I wanted to run a bit because one of them would always be sliding in in the 4 spot.  So these scenarios were only run with made up P5 CCG results since neither Memphis or Boise really have a shot at the Playoff.  Anyway, here are the scenarios for the Playoff contenders (the full list of scenarios can be found in the Previous Polls folder):
+* And your playoff teams are.......... Ohio State, LSU, Clemson, and *checks notes* Memphis?  Yes that is right, apparently.  Memphis just barely edges out Oklahoma.  Memphis with a slight advantage in strength of schedule, Oklahoma with a small advantage on offensive and defensive stats, and Memphis gets a final bump from turnover margin.  So congrats to Memphis on their playoff appearance!
 
-Team | In | Out | What Happens
----|---|---|---
-Ohio State | 32 | 0 | Always In
-LSU | 32 | 0 | Always In
-Clemson | 28 | 4 | Out with loss and Georgia and Oklahoma both win (4)
-Georgia | 16 | 16 | In with win, out with loss (16)
-Oklahoma | 12 | 20 | In with win and Clemson loss (8).  In with win and Clemson win and Georgia loss (4)
-Utah | 4 | 28 | In with win and Georgia and Baylor both lose (4)
-Baylor | 4 | 28 | In with win and Georgia and Utah both lose (4)
+* Notable teams missing: #26 Iowa, #28 Virginia, #29 USC
+
+* Also special shout out to sports-reference for the team stat tables disappearing until I wrote them, delaying my poll until today
 
 
 ### TODO List
 
-1. Score predictor <-- No real progress made here.  Fiddled with it during the offseason but never got anything useful.  Maybe some day...
+1. Ideas for next season
+    * Add in info about conferences so we can print out conference standings <-- Partially done
+        * Would also need to program in tiebreakers which could get complicated
+    * Boosts for conference champions perhaps? <-- next season probably
+    * Conference and division rankings maybe? <-- maybe
+	
+2. Score predictor <-- No real progress made here.  Fiddled with it during the offseason but never got anything useful.  Maybe some day...
 
-2. Clean up the code
+3. Clean up the code
 
-3. ???
-
-
-
-
-
-
-
+4. ???
