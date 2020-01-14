@@ -15,7 +15,7 @@ import java.util.Map;
  */
 
 public class Poll {
-	public static String date = "20191208";
+	public static String date = "20200114";
 
 	public static void main(String[] args) throws InterruptedException {
 		//Hold teams and their names for lookup
@@ -28,7 +28,7 @@ public class Poll {
 		//Pulls stats from sports-reference
 		DataGrabber.getTeamStats(teams, date);
 		//Calculates SoS using basic and BCS-like formula
-		calcTeamBCSSoS(teams);
+		calcTeamWeightedSoS(teams);
 
 
 		//Print poll
@@ -50,8 +50,8 @@ public class Poll {
 //		PollPrinter.printTeam(teams, "Florida");
 	}
 
-	//Calculate regular and BCS-like SoS for each team
-	public static void calcTeamBCSSoS(Map<String, Team> teams) {
+	//Calculate regular and Weighted SoS for each team
+	public static void calcTeamWeightedSoS(Map<String, Team> teams) {
 		//Hold the numbers
 		Map<String, Integer> allTeamWins = new HashMap<>();
 		Map<String, Integer> allTeamGames = new HashMap<>();

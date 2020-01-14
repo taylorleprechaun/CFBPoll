@@ -132,8 +132,8 @@ public class PollPrinter {
 
 		DecimalFormat dec4 = new DecimalFormat("#0.0000");
 		System.out.println("\n\nMisc info:");
-		System.out.println("Average SoS: " + dec4.format(averageSoS/129));
-		System.out.println("Average Weighted SoS: " + dec4.format(averageWeightedSoS/129));
+		System.out.println("Average SoS: " + dec4.format(averageSoS/130));
+		System.out.println("Average Weighted SoS: " + dec4.format(averageWeightedSoS/130));
 	}
 
 	//Print in Reddit table format for copy paste
