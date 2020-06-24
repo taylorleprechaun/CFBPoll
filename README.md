@@ -2,21 +2,19 @@
 
 ### About
 
-Poll pulls some data about teams and uses it to rank them.  Data used includes game-by-game results and offensive and defensive yardage.  Plans to introduce more/better data in the future.
+Poll pulls some data about teams and uses it to rank them.  Data used includes game-by-game results and offensive and defensive team stats.
 
 In the poll, a team's "Score" is in relation to the #1 team.  The formula gives points to teams using the data it has.  Once all the teams are ranked it measures against the highest score given out.  So, if Clemson is #1 and they earned 123 points from the poll, then every team's points will be divided by 123 to get their final score.
 
-Made for fun.  Not really sure what I plan to do with this once I get it refined.
+Made for fun.  I want to get this added to the Massey Composite for the 2020 season and beyond so I still need to do more tweaks before the season starts.
 
 ### Recent changes
 
-* None
+* 6/24/2020: Big code update to make running the poll better and easier
 
-### Rankings
+### Rankings (Updated 1/14/2020)
 
 **Week 17 Rankings**
-
-(As of 1/14/2020)
 
 Rank| Team | Score | Record
 ---|---|---|---
@@ -46,7 +44,7 @@ Rank| Team | Score | Record
 24 | Iowa | 0.8158 | 10-3
 25 | SMU | 0.8058 | 10-3
 
-#### Observations and Notes
+#### Observations and Notes (Updated 1/14/2020)
 
 * Ohio State above Clemson is expected by my poll given how far ahead of them they were before each team took a loss.  I mentioned it last season that maybe something to compare head-to-head results could be useful but I decided against it then and I'm still against it now.  I'm willing to stick with what my computer says based on the formula and not mess with the standings afterwards.
 
@@ -54,18 +52,40 @@ Rank| Team | Score | Record
 
 * See you all next fall!  Go Gators!
 
-### TODO List
+### TODO List (Updated 6/24/2020)
 
-1. First thing is first is I plan on tweaking my ranking formula.  I think some of the criteria and weights I use should be altered a bit.  I already started messing with this after the Post CCG rankings in December but it isn't yet where I want it.
-
-2. Ideas for next season
-    * Add in info about conferences so we can print out conference standings <-- Conferences/Divisions added.  Not sure if I want to do standings given all the tiebreaker nonsense
-        * Would also need to program in tiebreakers which could get complicated
-    * Boosts for conference champions perhaps? <-- Following from previous point: would need to be manually done (wouldn't be too hard to do).  Need to figure out a good boost for this if any
-    * Conference and division rankings maybe? <-- As it stands I could definitely put something easy together to print out each conference's rankings in relation to the others (Highest/Lowest ranked teams, Mean and Median ranking, etc.)
+1. Ideas for the future?
+    * Boosts for conference champions perhaps? <-- Would do manually if I did it since programming in tiebreakers for conferences seems very not fun and easy to mess up... if I did this I would need to figure out how it affects a team's rating and I haven't thought of a good way to do that yet
+    * Conference and division rankings maybe? <-- As it stands I could definitely put something easy together to print out each conference's rankings in relation to the others (Highest/Lowest ranked teams, Mean and Median ranking, etc.).  Not sure how much I care about doing this though
 	
-3. Score predictor <-- Still no progress here.  I might mess with in the offseason but probably not
+2. Clean up the code more
 
-4. Clean up the code
+3. ????
 
-5. ???
+### Misc.
+
+**Introducing the Best and Worst of all Time!**
+
+My poll, as of this update, has been run across the 2001-02, 04, 06-08, 11-13, and 18-19 seasons (using my new rating formula, meaning the ratings from all previous posts aren't totally accurate to what you'll see here, but the formula is way better now, trust me)
+
+Something I noticed across these seasons is that the best teams had a rating above 40 and the worst teams were below 16, so I made a list of them (here: https://github.com/taylorleprechaun/CFBPoll/blob/master/rsc/teams/BOAT%20and%20WOAT.xlsx )
+
+The top 5 Best of all Time
+
+Rank | Year | Team | Rating | Record
+---|---|---|---|---
+1 | 2018 | Clemson | 42.445 | 15-0
+2 | 2019 | LSU | 42.374 | 15-0
+3 | 2001 | Miami FL | 42.309 | 12-0
+4 | 2011 | LSU | 41.131 | 13-1
+5 | 2008 | Florida | 40.690 | 13-1
+
+The bottom 5 Worst of all Time
+
+Rank | Year | Team | Rating | Record
+---|---|---|---|---
+1 | 2019 | Akron | 13.370 | 0-12
+2 | 2004 | UCF | 13.954 | 0-11
+3 | 2013 | Miami OH | 13.973 | 0-12
+4 | 2006 | FIU | 14.394 | 0-12
+5 | 2019 | UMass | 14.527 | 1-11
