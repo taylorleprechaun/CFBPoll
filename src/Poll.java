@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,39 +19,91 @@ import java.util.Map;
  */
 
 public class Poll {
-	public static String date = "20200114";
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
+		//Stuff to figure out which poll we want to view
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		seasonDir();
+		System.out.println("\n\n> Season?");
+		String season = br.readLine();
+//		String season = "2013";
+
+		weakDir(season);
+		System.out.println("\n\n> Week?");
+		String week = br.readLine();
+//		String week = "NCG";
+		System.out.println("\n\n");
+
+
+		if (week.length() == 1) {
+			week = "0" + week;
+		}
+		String confFile = "FBS-Conf-" + season;
+
 		//Hold teams and their names for lookup
 		Map<String, Team> teams = new HashMap<>();
 
-		//Gets FBS teams from FBS.txt
-		DataGrabber.generateTeams(teams);
-		//Pulls scores (and calculates record) of teams from UCLA page
-		DataGrabber.getTeamResults(teams, date);
-		//Pulls stats from sports-reference
-		DataGrabber.getTeamStats(teams, date);
+		//Gets FBS teams from that season's team list
+		DataBuilder.generateTeams(teams, confFile);
+		//Pulls scores (and calculates record) of teams from sports-reference score sheet
+		DataBuilder.getTeamResults(teams, season, week);
+		//Pulls stats from sports-reference stat sheets
+		DataBuilder.getTeamStats(teams, season, week);
+
 		//Calculates SoS using basic and BCS-like formula
 		calcTeamWeightedSoS(teams);
-
 
 		//Print poll
 		if (args[0].equals("Full")) {
 			PollPrinter.printTeamData(teams, "Full");
 		} else if (args[0].equals("T25")) {
 			PollPrinter.printTeamData(teams, "T25");
-		} else if (args[0].equals("Reddit")) {
-			PollPrinter.printReddit(teams);
-
-		//Predict scores between two teams
-		} else if (args[0].equals("vs")) {
-			Predictor predictor = new Predictor(teams.get("Florida"), teams.get("South Carolina"));
-			predictor.calcPrediction();
-			System.out.println("------------------------------");
+		} else if (args[0].equals("RedditT25")) {
+			PollPrinter.printReddit(teams, "25");
+		} else if (args[0].equals("RedditFull")) {
+			PollPrinter.printReddit(teams, "Full");
 		}
 
 		//Print info for an individual team
 //		PollPrinter.printTeam(teams, "Florida");
+	}
+
+	private static void seasonDir() {
+		File folder = new File(".\\rsc\\scores\\");
+		File[] listOfFiles = folder.listFiles();
+		System.out.println("> Seasons available:");
+		for (int ii = 0; ii < listOfFiles.length; ii++) {
+			if (listOfFiles[ii].isDirectory()) {
+				String entry = listOfFiles[ii].getName();
+				System.out.print(entry + "\t");
+				if (entry.length() < 4) {
+					System.out.print("\t");
+				}
+			}
+			if (ii % 7 == 6) {
+				System.out.print("\n");
+			}
+		}
+	}
+
+	private static void weakDir(String season) {
+		File folder = new File(".\\rsc\\scores\\" + season);
+		File[] listOfFiles = folder.listFiles();
+		System.out.println("\n> Weeks available:");
+		for (int ii = 0; ii < listOfFiles.length; ii++) {
+			if (listOfFiles[ii].isFile()) {
+				String entry = listOfFiles[ii].getName();
+				entry = entry.substring(7,entry.length()-5);
+				System.out.print(entry + "\t");
+				if (entry.length() < 4) {
+					System.out.print("\t");
+				}
+			}
+			if (ii % 7 == 6) {
+				System.out.print("\n");
+			}
+		}
 	}
 
 	//Calculate regular and Weighted SoS for each team

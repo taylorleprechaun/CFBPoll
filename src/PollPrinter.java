@@ -137,7 +137,7 @@ public class PollPrinter {
 	}
 
 	//Print in Reddit table format for copy paste
-	public static void printReddit(Map<String, Team> teams) {
+	public static void printReddit(Map<String, Team> teams, String type) {
 		Iterator it = teams.entrySet().iterator();
 		ArrayList<String> names = new ArrayList<>();
 
@@ -175,7 +175,12 @@ public class PollPrinter {
 
 		System.out.println("Rank| Team | Score | Record\n---|---|---|---");
 
-		for (int ii = 0; ii < 25; ii++) {
+		int printNum = 25;
+		if (type.equals("Full")) {
+			printNum = teams.size();
+		}
+
+		for (int ii = 0; ii < printNum; ii++) {
 			Team currTeam = teams.get(names.get(ii));
 
 			//Ranking + Name
@@ -193,7 +198,7 @@ public class PollPrinter {
 	//Print info for one team
 	public static void printTeam(Map<String, Team> teams, String teamName) {
 		Team team = teams.get(teamName);
-		System.out.println(teamName + "\n==============");
+		System.out.println(teamName + " " + team.getWins() + "-" + team.getLosses() + "\n==============");
 		for (int ii = 0; ii < team.getOpponents().size(); ii++) {
 			System.out.println(team.getOpponents().get(ii) + " " + team.getResults().get(ii));
 		}
