@@ -23,15 +23,7 @@ public class PollPrinter {
 				double team1Rank = teams.get(names.get(jj)).calculateRank();
 				double team2Rank = teams.get(names.get(jj+1)).calculateRank();
 
-				//This bit handles early season shenanigans with teams playing only FCS opponents
-				int teamWins = teams.get(names.get(jj)).getWins();
-				int teamLosses = teams.get(names.get(jj)).getLosses();
-				if (teamWins == 1 && teamLosses == 0) {
-					String temp = names.get(jj);
-					names.set(jj, names.get(jj+1));
-					names.set(jj+1, temp);
-
-				} else if (team1Rank < team2Rank) {
+				if (team1Rank < team2Rank) {
 					String temp = names.get(jj);
 					names.set(jj, names.get(jj+1));
 					names.set(jj+1, temp);
@@ -130,10 +122,14 @@ public class PollPrinter {
 			System.out.println();
 		}
 
+		//To make the SoS printouts match the number of teams being printed
+		//	because sometimes only 25 get printed instead of ~130 the number comes out wrong
+		//	(dividing the sum of 25 teams by ~130 instead of by 25)
+		int teamCount = count;
 		DecimalFormat dec4 = new DecimalFormat("#0.0000");
 		System.out.println("\n\nMisc info:");
-		System.out.println("Average SoS: " + dec4.format(averageSoS/130));
-		System.out.println("Average Weighted SoS: " + dec4.format(averageWeightedSoS/130));
+		System.out.println("Average SoS: " + dec4.format(averageSoS/teamCount));
+		System.out.println("Average Weighted SoS: " + dec4.format(averageWeightedSoS/teamCount));
 	}
 
 	//Print in Reddit table format for copy paste

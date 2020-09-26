@@ -27,7 +27,7 @@ public class Poll {
 		seasonDir();
 		System.out.println("\n\n> Season?");
 		String season = br.readLine();
-//		String season = "2013";
+//		String season = "2019";
 
 		weakDir(season);
 		System.out.println("\n\n> Week?");
@@ -66,7 +66,7 @@ public class Poll {
 		}
 
 		//Print info for an individual team
-//		PollPrinter.printTeam(teams, "Florida");
+//		PollPrinter.printTeam(teams, "Kansas");
 	}
 
 	private static void seasonDir() {

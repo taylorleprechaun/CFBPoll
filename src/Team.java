@@ -20,7 +20,7 @@ public class Team {
 
 	//Calculates the teams rank in the system
 	public double calculateRank() {
-		this.teamRank = new Rank(PCT, offenseStats, defenseStats, SoS, oppSoS, this);
+		this.teamRank = new Rank(PCT, offenseStats, defenseStats, this);
 		return teamRank.calculateRank();
 	}
 
@@ -73,6 +73,9 @@ public class Team {
 	public double getWeightedSoS() {
 		return Rank.calculateWeightedSoS(SoS, oppSoS);
 	}
+	public double getOppSoS() {
+		return oppSoS;
+	}
 	public void setOppSoS(double oppSoS) {
 		this.oppSoS = oppSoS;
 	}
@@ -98,5 +101,4 @@ public class Team {
 	public String getDivision() {
 		return  division;
 	}
-
 }

@@ -1,0 +1,120 @@
+Air Force|MWC| 
+Akron|MAC|East
+Alabama|SEC|West
+Alabama-Birmingham|CUSA|East
+Arizona|Pac-10| 
+Arizona State|Pac-10| 
+Arkansas|SEC|West
+Arkansas State|Sun Belt| 
+Army|Indep| 
+Auburn|SEC|West
+Ball State|MAC|West
+Baylor|Big 12|South
+Boise State|WAC| 
+Boston College|ACC|Atlantic
+Bowling Green|MAC|East
+Brigham Young|MWC| 
+Buffalo|MAC|East
+California|Pac-10| 
+Central Florida|CUSA|East
+Central Michigan|MAC|West
+Cincinnati|Big East| 
+Clemson|ACC|Atlantic
+Colorado|Big 12|North
+Colorado State|MWC| 
+Connecticut|Big East| 
+Duke|ACC|Coastal
+East Carolina|CUSA|East
+Eastern Michigan|MAC|West
+Florida|SEC|East
+Florida Atlantic|Sun Belt| 
+Florida Int'l|Sun Belt| 
+Florida State|ACC|Atlantic
+Fresno State|WAC| 
+Georgia|SEC|East
+Georgia Tech|ACC|Coastal
+Hawaii|WAC| 
+Houston|CUSA|West
+Idaho|WAC| 
+Illinois|Big 10| 
+Indiana|Big 10| 
+Iowa|Big 10| 
+Iowa State|Big 12|North
+Kansas|Big 12|North
+Kansas State|Big 12|North
+Kent State|MAC|East
+Kentucky|SEC|East
+Louisiana Tech|WAC| 
+Louisiana-Lafayette|Sun Belt| 
+Louisiana-Monroe|Sun Belt| 
+Louisville|Big East| 
+Louisiana State|SEC|West
+Marshall|CUSA|East
+Maryland|ACC|Atlantic
+Memphis|CUSA|East
+Miami FL|ACC|Coastal
+Miami OH|MAC|East
+Michigan|Big 10| 
+Michigan State|Big 10| 
+MTSU|Sun Belt| 
+Minnesota|Big 10| 
+Mississippi|SEC|West
+Mississippi State|SEC|West
+Missouri|Big 12|North
+Navy|Indep| 
+Nebraska|Big 12|North
+Nevada|WAC| 
+New Mexico|MWC| 
+New Mexico State|WAC| 
+North Carolina|ACC|Coastal
+North Carolina State|ACC|Atlantic
+North Texas|Sun Belt| 
+Northern Illinois|MAC|West
+Northwestern|Big 10| 
+Notre Dame|Indep| 
+Ohio U.|MAC|East
+Ohio State|Big 10| 
+Oklahoma|Big 12|South
+Oklahoma State|Big 12|South
+Oregon|Pac-10| 
+Oregon State|Pac-10| 
+Penn State|Big 10| 
+Pittsburgh|Big East| 
+Purdue|Big 10| 
+Rice|CUSA|West
+Rutgers|Big East| 
+San Diego State|MWC| 
+San Jose State|WAC| 
+SMU|CUSA|West
+South Carolina|SEC|East
+South Florida|Big East| 
+Southern Miss|CUSA|East
+Stanford|Pac-10| 
+Syracuse|Big East| 
+Temple|MAC|East
+Tennessee|SEC|East
+Texas|Big 12|South
+Texas A&M|Big 12|South
+Texas Christian|MWC| 
+Texas Tech|Big 12|South
+Toledo|MAC|West
+Troy|Sun Belt| 
+Tulane|CUSA|West
+Tulsa|CUSA|West
+UCLA|Pac-10| 
+UNLV|MWC| 
+USC|Pac-10| 
+Utah|MWC| 
+Utah State|WAC| 
+UTEP|CUSA|West
+Vanderbilt|SEC|East
+Virginia|ACC|Coastal
+Virginia Tech|ACC|Coastal
+Wake Forest|ACC|Atlantic
+Washington|Pac-10| 
+Washington State|Pac-10| 
+West Virginia|Big East| 
+Western Kentucky|Sun Belt| 
+Western Michigan|MAC|West
+Wisconsin|Big 10| 
+Wyoming|MWC| 

@@ -77,6 +77,20 @@ public class DataBuilder {
 		ArrayList<ArrayList<String>> offenseSheet = getStatSheet(offense);
 		ArrayList<ArrayList<String>> defenseSheet = getStatSheet(defense);
 
+		//Find teams who haven't played a game yet
+		ArrayList<String> removeList = new ArrayList<>();
+		for (Map.Entry<String, Team> entry : teams.entrySet()) {
+			Team team = entry.getValue();
+			int wins = team.getWins(), losses = team.getLosses();
+			if (wins+losses == 0) {
+				removeList.add(entry.getKey());
+			}
+		}
+
+		//Remove them from the teams map because we won't rank them
+		for (int ii = 0; ii < removeList.size(); ii++) {
+			teams.remove(removeList.get(ii));
+		}
 
 		//Get team stats for offense
 		for (int ii = 0; ii < offenseSheet.size(); ii++) {
