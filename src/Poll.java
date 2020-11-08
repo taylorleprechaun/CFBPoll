@@ -56,13 +56,13 @@ public class Poll {
 
 		//Print poll
 		if (args[0].equals("Full")) {
-			PollPrinter.printTeamData(teams, "Full");
+			PollPrinter.printTeamData(teams, "Full", false);
 		} else if (args[0].equals("T25")) {
-			PollPrinter.printTeamData(teams, "T25");
+			PollPrinter.printTeamData(teams, "T25", false);
 		} else if (args[0].equals("RedditT25")) {
-			PollPrinter.printReddit(teams, "25");
+			PollPrinter.printTeamData(teams, "25", true);
 		} else if (args[0].equals("RedditFull")) {
-			PollPrinter.printReddit(teams, "Full");
+			PollPrinter.printTeamData(teams, "Full", true);
 		}
 
 		//Print info for an individual team
