@@ -14,37 +14,37 @@ Made for fun.  I want to get this added to the Massey Composite for the 2020 sea
 * 9/26/2020: Some minor follow-up fixes I forgot to commit a couple months ago along with the rest of the BOAT/WOAT
 * 11/8/2020: First poll of 2020 released (Week 10)
 
-### Rankings (Updated 11/8/2020)
+### Rankings (Updated 11/16/2020)
 
-**Week 10 Rankings**
+**Week 11 Rankings**
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Cincinnati | 1.0000 | 6-0
-2 | Alabama | 0.9595 | 6-0
-3 | Marshall | 0.9468 | 6-0
-4 | Northwestern | 0.9372 | 3-0
-5 | Brigham Young | 0.9190 | 8-0
-6 | Coastal Carolina | 0.9179 | 7-0
-7 | Clemson | 0.9134 | 7-1
-8 | Notre Dame | 0.9078 | 7-0
-9 | San Jose State | 0.8859 | 3-0
-10 | Miami FL | 0.8824 | 6-1
-11 | Oklahoma State | 0.8720 | 5-1
-12 | Louisiana-Lafayette | 0.8717 | 6-1
-13 | Indiana | 0.8699 | 3-0
-14 | Florida | 0.8570 | 4-1
-15 | Ohio State | 0.8568 | 3-0
-16 | Texas A&M | 0.8534 | 5-1
-17 | SMU | 0.8516 | 7-1
-18 | Colorado | 0.8296 | 1-0
-19 | Army | 0.8283 | 6-1
-20 | Purdue | 0.8270 | 2-0
-21 | Liberty | 0.8157 | 7-0
-22 | Washington State | 0.8147 | 1-0
-23 | Boise State | 0.8077 | 2-1
-24 | USC | 0.8071 | 1-0
-25 | Oregon | 0.8062 | 1-0
+1 | Northwestern | 1.0000 | 4-0
+2 | Alabama | 0.9835 | 6-0
+3 | Cincinnati | 0.9685 | 7-0
+4 | Marshall | 0.9517 | 7-0
+5 | Brigham Young | 0.9477 | 8-0
+6 | Clemson | 0.9367 | 7-1
+7 | Coastal Carolina | 0.9363 | 7-0
+8 | Colorado | 0.9324 | 2-0
+9 | Notre Dame | 0.9256 | 8-0
+10 | Miami FL | 0.9110 | 7-1
+11 | Oklahoma State | 0.9034 | 5-1
+12 | Buffalo | 0.8903 | 2-0
+13 | Oregon | 0.8876 | 2-0
+14 | San Jose State | 0.8844 | 4-0
+15 | Florida | 0.8833 | 5-1
+16 | Louisiana-Lafayette | 0.8809 | 7-1
+17 | Texas A&M | 0.8585 | 5-1
+18 | Wisconsin | 0.8544 | 2-0
+19 | Central Michigan | 0.8536 | 2-0
+20 | Ohio State | 0.8499 | 3-0
+21 | Tulsa | 0.8495 | 4-1
+22 | Boise State | 0.8444 | 3-1
+23 | Indiana | 0.8361 | 4-0
+24 | Liberty | 0.8325 | 8-0
+25 | Florida Atlantic | 0.8312 | 4-1
 
 #### Observations and Notes (Updated 11/8/2020)
 
