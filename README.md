@@ -13,38 +13,39 @@ Made for fun.  I want to get this added to the Massey Composite for the 2020 sea
 * 6/24/2020: Big code update to make running the poll better and easier
 * 9/26/2020: Some minor follow-up fixes I forgot to commit a couple months ago along with the rest of the BOAT/WOAT
 * 11/8/2020: First poll of 2020 released (Week 10)
+* 11/27/2020: Week 11 poll (released a bit late because I didn't have access to my computer for a few days)
 
-### Rankings (Updated 11/16/2020)
+### Rankings (Updated 11/27/2020)
 
-**Week 11 Rankings**
+**Week 12 Rankings**
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Northwestern | 1.0000 | 4-0
-2 | Alabama | 0.9835 | 6-0
-3 | Cincinnati | 0.9685 | 7-0
-4 | Marshall | 0.9517 | 7-0
-5 | Brigham Young | 0.9477 | 8-0
-6 | Clemson | 0.9367 | 7-1
-7 | Coastal Carolina | 0.9363 | 7-0
-8 | Colorado | 0.9324 | 2-0
-9 | Notre Dame | 0.9256 | 8-0
-10 | Miami FL | 0.9110 | 7-1
-11 | Oklahoma State | 0.9034 | 5-1
-12 | Buffalo | 0.8903 | 2-0
-13 | Oregon | 0.8876 | 2-0
-14 | San Jose State | 0.8844 | 4-0
-15 | Florida | 0.8833 | 5-1
-16 | Louisiana-Lafayette | 0.8809 | 7-1
-17 | Texas A&M | 0.8585 | 5-1
-18 | Wisconsin | 0.8544 | 2-0
-19 | Central Michigan | 0.8536 | 2-0
-20 | Ohio State | 0.8499 | 3-0
-21 | Tulsa | 0.8495 | 4-1
-22 | Boise State | 0.8444 | 3-1
-23 | Indiana | 0.8361 | 4-0
-24 | Liberty | 0.8325 | 8-0
-25 | Florida Atlantic | 0.8312 | 4-1
+1 | Northwestern | 1.0000 | 5-0
+2 | Cincinnati | 0.9959 | 8-0
+3 | Alabama | 0.9751 | 7-0
+4 | Brigham Young | 0.9650 | 9-0
+5 | Marshall | 0.9648 | 7-0
+6 | Coastal Carolina | 0.9464 | 8-0
+7 | Clemson | 0.9423 | 7-1
+8 | Notre Dame | 0.9403 | 8-0
+9 | Miami FL | 0.9295 | 7-1
+10 | Oregon | 0.9266 | 3-0
+11 | Western Michigan | 0.9063 | 3-0
+12 | Colorado | 0.9055 | 2-0
+13 | Ohio State | 0.8898 | 4-0
+14 | San Jose State | 0.8848 | 4-0
+15 | Louisiana-Lafayette | 0.8847 | 7-1
+16 | Washington | 0.8807 | 2-0
+17 | Boise State | 0.8789 | 4-1
+18 | Tulsa | 0.8673 | 5-1
+19 | Florida | 0.8579 | 6-1
+20 | Oklahoma State | 0.8567 | 5-2
+21 | Texas A&M | 0.8524 | 5-1
+22 | Oklahoma | 0.8478 | 6-2
+23 | Florida Atlantic | 0.8454 | 5-1
+24 | Nevada | 0.8451 | 5-0
+25 | Army | 0.8439 | 7-2
 
 #### Observations and Notes (Updated 11/8/2020)
 
