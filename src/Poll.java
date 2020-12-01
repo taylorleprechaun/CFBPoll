@@ -60,7 +60,7 @@ public class Poll {
 		} else if (args[0].equals("T25")) {
 			PollPrinter.printTeamData(teams, "T25", false);
 		} else if (args[0].equals("RedditT25")) {
-			PollPrinter.printTeamData(teams, "25", true);
+			PollPrinter.printTeamData(teams, "T25", true);
 		} else if (args[0].equals("RedditFull")) {
 			PollPrinter.printTeamData(teams, "Full", true);
 		}

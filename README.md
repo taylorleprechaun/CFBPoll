@@ -15,37 +15,37 @@ Made for fun.  I want to get this added to the Massey Composite for the 2020 sea
 * 11/8/2020: First poll of 2020 released (Week 10)
 * 11/27/2020: Week 11 poll (released a bit late because I didn't have access to my computer for a few days)
 
-### Rankings (Updated 11/27/2020)
+### Rankings (Updated 11/30/2020)
 
-**Week 12 Rankings**
+**Week 13 Rankings**
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Northwestern | 1.0000 | 5-0
-2 | Cincinnati | 0.9959 | 8-0
-3 | Alabama | 0.9751 | 7-0
-4 | Brigham Young | 0.9650 | 9-0
-5 | Marshall | 0.9648 | 7-0
-6 | Coastal Carolina | 0.9464 | 8-0
-7 | Clemson | 0.9423 | 7-1
-8 | Notre Dame | 0.9403 | 8-0
-9 | Miami FL | 0.9295 | 7-1
-10 | Oregon | 0.9266 | 3-0
-11 | Western Michigan | 0.9063 | 3-0
-12 | Colorado | 0.9055 | 2-0
-13 | Ohio State | 0.8898 | 4-0
-14 | San Jose State | 0.8848 | 4-0
-15 | Louisiana-Lafayette | 0.8847 | 7-1
-16 | Washington | 0.8807 | 2-0
-17 | Boise State | 0.8789 | 4-1
-18 | Tulsa | 0.8673 | 5-1
-19 | Florida | 0.8579 | 6-1
-20 | Oklahoma State | 0.8567 | 5-2
-21 | Texas A&M | 0.8524 | 5-1
-22 | Oklahoma | 0.8478 | 6-2
-23 | Florida Atlantic | 0.8454 | 5-1
-24 | Nevada | 0.8451 | 5-0
-25 | Army | 0.8439 | 7-2
+1 | Cincinnati | 1.0000 | 8-0
+2 | Alabama | 0.9942 | 8-0
+3 | Marshall | 0.9693 | 7-0
+4 | Colorado | 0.9692 | 3-0
+5 | Brigham Young | 0.9652 | 9-0
+6 | Clemson | 0.9596 | 8-1
+7 | Notre Dame | 0.9585 | 9-0
+8 | Ohio State | 0.9342 | 4-0
+9 | Miami FL | 0.9318 | 7-1
+10 | Coastal Carolina | 0.9294 | 9-0
+11 | Washington | 0.9000 | 3-0
+12 | Boise State | 0.8927 | 4-1
+13 | Louisiana-Lafayette | 0.8753 | 8-1
+14 | Florida | 0.8742 | 7-1
+15 | Tulsa | 0.8739 | 5-1
+16 | Buffalo | 0.8725 | 4-0
+17 | Northwestern | 0.8724 | 5-1
+18 | Texas A&M | 0.8676 | 6-1
+19 | Iowa State | 0.8633 | 7-2
+20 | Western Michigan | 0.8581 | 4-0
+21 | Oklahoma State | 0.8548 | 6-2
+22 | San Jose State | 0.8529 | 4-0
+23 | Florida Atlantic | 0.8508 | 5-1
+24 | Indiana | 0.8494 | 5-1
+25 | Oklahoma | 0.8450 | 6-2
 
 #### Observations and Notes (Updated 11/8/2020)
 
