@@ -13,43 +13,44 @@ Made for fun.  I want to get this added to the Massey Composite for the 2020 sea
 * 6/24/2020: Big code update to make running the poll better and easier
 * 9/26/2020: Some minor follow-up fixes I forgot to commit a couple months ago along with the rest of the BOAT/WOAT
 * 11/8/2020: First poll of 2020 released (Week 10)
-* 11/27/2020: Week 11 poll (released a bit late because I didn't have access to my computer for a few days)
+* 12/14/2020: Week 14 poll released
 
-### Rankings (Updated 11/30/2020)
+### Rankings (Updated 12/14/2020)
 
-**Week 13 Rankings**
+**Week 14 Rankings**
 
 Rank| Team | Score | Record
 ---|---|---|---
 1 | Cincinnati | 1.0000 | 8-0
-2 | Alabama | 0.9942 | 8-0
-3 | Marshall | 0.9693 | 7-0
-4 | Colorado | 0.9692 | 3-0
-5 | Brigham Young | 0.9652 | 9-0
-6 | Clemson | 0.9596 | 8-1
-7 | Notre Dame | 0.9585 | 9-0
-8 | Ohio State | 0.9342 | 4-0
-9 | Miami FL | 0.9318 | 7-1
-10 | Coastal Carolina | 0.9294 | 9-0
-11 | Washington | 0.9000 | 3-0
-12 | Boise State | 0.8927 | 4-1
-13 | Louisiana-Lafayette | 0.8753 | 8-1
-14 | Florida | 0.8742 | 7-1
-15 | Tulsa | 0.8739 | 5-1
-16 | Buffalo | 0.8725 | 4-0
-17 | Northwestern | 0.8724 | 5-1
-18 | Texas A&M | 0.8676 | 6-1
-19 | Iowa State | 0.8633 | 7-2
-20 | Western Michigan | 0.8581 | 4-0
-21 | Oklahoma State | 0.8548 | 6-2
-22 | San Jose State | 0.8529 | 4-0
-23 | Florida Atlantic | 0.8508 | 5-1
-24 | Indiana | 0.8494 | 5-1
-25 | Oklahoma | 0.8450 | 6-2
+2 | Alabama | 0.9914 | 10-0
+3 | Ohio State | 0.9622 | 5-0
+4 | Coastal Carolina | 0.9592 | 11-0
+5 | Clemson | 0.9526 | 9-1
+6 | Brigham Young | 0.9469 | 10-1
+7 | San Jose State | 0.9463 | 6-0
+8 | Notre Dame | 0.9436 | 10-0
+9 | USC | 0.9231 | 5-0
+10 | Louisiana-Lafayette | 0.9067 | 9-1
+11 | Texas A&M | 0.8879 | 7-1
+12 | Miami FL | 0.8874 | 8-2
+13 | Iowa State | 0.8868 | 8-2
+14 | Marshall | 0.8841 | 7-1
+15 | Tulsa | 0.8814 | 6-1
+16 | Boise State | 0.8783 | 5-1
+17 | Indiana | 0.8739 | 6-1
+18 | Northwestern | 0.8568 | 6-1
+19 | Oklahoma | 0.8555 | 7-2
+20 | Georgia | 0.8517 | 7-2
+21 | Colorado | 0.8490 | 4-1
+22 | Army | 0.8485 | 8-2
+23 | North Carolina | 0.8367 | 8-3
+24 | Buffalo | 0.8290 | 5-0
+25 | Florida | 0.8284 | 8-2
 
-#### Observations and Notes (Updated 11/8/2020)
+#### Observations and Notes (Updated 12/14/2020)
 
-* The lack of non-con is really messing with my poll but it is what it is.  Hopefully it'll sort out more as more games get played.
+* ~~The lack of non-con is really messing with my poll but it is what it is.  Hopefully it'll sort out more as more games get played.~~
+* My poll remains messed up going into the conference championships.  Unfortunately the lack of OOC makes it look like trash.  It hopefully will sort itself out (for the most part) after bowl season but until then it is what it is.
 
 ### TODO List (Updated 9/26/2020)
 
