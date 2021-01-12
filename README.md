@@ -13,44 +13,44 @@ Made for fun.  I want to get this added to the Massey Composite for the 2020 sea
 * 6/24/2020: Big code update to make running the poll better and easier
 * 9/26/2020: Some minor follow-up fixes I forgot to commit a couple months ago along with the rest of the BOAT/WOAT
 * 11/8/2020: First poll of 2020 released (Week 10)
-* 12/21/2020: Week 15 poll released
+* 1/12/2021: Final poll of 2020 released (Week 16)
 
-### Rankings (Updated 12/21/2020)
+### Rankings (Updated 1/12/2021)
 
-**Week 15 Rankings**
+**Week 16 Rankings**
 
 Rank| Team | Score | Record
 ---|---|---|---
-1 | Cincinnati | 1.0000 | 9-0
-2 | Alabama | 0.9887 | 11-0
-3 | Ohio State | 0.9789 | 6-0
-4 | Clemson | 0.9639 | 10-1
-5 | San Jose State | 0.9525 | 7-0
-6 | Coastal Carolina | 0.9456 | 11-0
-7 | Brigham Young | 0.9322 | 10-1
-8 | Notre Dame | 0.9111 | 10-1
-9 | Louisiana-Lafayette | 0.8953 | 9-1
-10 | Miami FL | 0.8868 | 8-2
-11 | Texas A&M | 0.8849 | 8-1
-12 | Indiana | 0.8728 | 6-1
-13 | Oklahoma | 0.8712 | 8-2
-14 | Army | 0.8524 | 9-2
-15 | Iowa State | 0.8465 | 8-3
-16 | Colorado | 0.8434 | 4-1
-17 | Ball State | 0.8405 | 6-1
-18 | USC | 0.8399 | 5-1
-19 | Tulsa | 0.8399 | 6-2
-20 | Georgia | 0.8391 | 7-2
-21 | Marshall | 0.8315 | 7-2
-22 | Boise State | 0.8277 | 5-2
-23 | North Carolina | 0.8251 | 8-3
-24 | Northwestern | 0.8171 | 6-2
-25 | Alabama-Birmingham | 0.8115 | 6-3
+1 | Alabama | 1.0000 | 13-0
+2 | Ohio State | 0.9583 | 7-1
+3 | Cincinnati | 0.9174 | 9-1
+4 | Brigham Young | 0.9030 | 11-1
+5 | Coastal Carolina | 0.9010 | 11-1
+6 | Clemson | 0.8950 | 10-2
+7 | San Jose State | 0.8912 | 7-1
+8 | Texas A&M | 0.8904 | 9-1
+9 | Louisiana-Lafayette | 0.8860 | 10-1
+10 | Oklahoma | 0.8827 | 9-2
+11 | Ball State | 0.8687 | 7-1
+12 | Notre Dame | 0.8625 | 10-2
+13 | Georgia | 0.8614 | 8-2
+14 | Iowa State | 0.8563 | 9-3
+15 | Liberty | 0.8283 | 10-1
+16 | Texas | 0.8281 | 7-3
+17 | Northwestern | 0.8277 | 7-2
+18 | Oklahoma State | 0.8253 | 8-3
+19 | Buffalo | 0.8208 | 6-1
+20 | Miami FL | 0.8200 | 8-3
+21 | USC | 0.8102 | 5-1
+22 | Boise State | 0.8085 | 5-2
+23 | Indiana | 0.7979 | 6-2
+24 | Miami OH | 0.7977 | 2-1
+25 | Army | 0.7924 | 9-3
 
-#### Observations and Notes (Updated 12/21/2020)
+#### Observations and Notes (Updated 1/12/2021)
 
-* ~~The lack of non-con is really messing with my poll but it is what it is.  Hopefully it'll sort out more as more games get played.~~
-* 3 out of 4 ain't bad
+* In the end, bowl season did definitely help my poll but a single data point for 50 teams isn't enough to help fix it.  Oh well.  Hopefully next season goes better.  See you all either next season or some time before then with a little update for this poll.  Go Gators!
+* Additions to BOAT and WOAT!  (Down below in the section for it)
 
 ### TODO List (Updated 9/26/2020)
 
@@ -71,6 +71,11 @@ My poll, as of this update, has been run across every season from 2000 through 2
 Something I noticed across these seasons is that the best teams had a rating above 40 and the worst teams were below 16, so I made a list of them (here: https://github.com/taylorleprechaun/CFBPoll/blob/master/rsc/teams/BOAT%20and%20WOAT.xlsx )
 
 I decided to split up the rankings between pre-CFP and CFP eras.  This was because the teams in the CFP would get little bumps from playing an extra game against an elite-level team.
+
+*New additions for the 2020 season!*
+
+* This year Alabama clocks in with a 40.866 in my poll, placing them at #6 in the Playoff Era
+* Vanderbilt, Bowling Green, and FIU clock in with 15.040, 15.610, and 15.790, respectively.  This puts them all outside of the all-time bottom 5, but it puts Vanderbilt at #3 worst of the Playoff Era.
 
 **The top 5 Best of all Time (pre-CFP era)**
 
