@@ -1,5 +1,7 @@
 # CFBPoll
 
+This version of the poll is donezo and has been re-written and published to a [new repo](https://github.com/taylorleprechaun/CFBPollNew).  Go check it out there!
+
 ### About
 
 Poll pulls some data about teams and uses it to rank them.  Data used includes game-by-game results and offensive and defensive team stats.
